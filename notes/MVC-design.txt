@@ -1,0 +1,63 @@
+Model:
+-----------------------
+Class: Account         |
++ id: int              |
++ name: str            |
++ Date: date_created   |
++ username: str        |
++ password: str        |
++ category_num: int    |
+-----------------------
+
+
+-----------------------
+Class: Item            |
++ id: int              |
++ name: str            |
++ account: Account     |
++ per_unit: double     |
++ units_sold: int      |
+-----------------------
+
+
+-----------------------
+Class: Entry           |
++ id: int              |
++ item: Item           |
++ date: Date           |
++ units: int           |
++ amt: double          |
++ category: str        |
+-----------------------
+
+
+=========================================================
+View:
+------------------------------------------------------------------------------
+Class: usrView                                                                |
++ account: Account                                                            |
+-----------                                                                   |
++ loadActivity(date1: Date = date_created, date1: Date = current): json       |
++ sumSales(date1: Date = date_created, date1: Date = current): json           |
++ sumPurch(date1: Date = date_created, date1: Date = current): json           |
++ sumProfit(date1: Date = date_created, date1: Date = current): json          |
+------------------------------------------------------------------------------
+
+
+=========================================================
+Controller:
+------------------------------------------------------------------------------
+Class: usrController                                                          |
++ account: Account                                                            |
+-----------                                                                   |
++ createNewAcc(name: str, username: str, password: str): Account              |
++ createNewItem(name: str, price: double, cat: int): Item                     |
++ createNewSale(item: Item, units: int, amt: double): Entry                   |
++ createNewPurch(item: Item, units: int, amp: double): Entry                  |
+------------------------------------------------------------------------------
+
+
+On login - create a new controller and a new view.
+
+
+
