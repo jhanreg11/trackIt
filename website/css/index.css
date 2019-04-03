@@ -1,0 +1,72 @@
+/*///COMMON///*/
+
+body {
+	font-family: 'Roboto Slab', serif;
+}
+
+#body {
+	display: flex;
+	flex-direction: row;
+	padding-top: 7vh;
+}
+
+.half {
+	display: flex;
+	flex-direction: column;
+}
+
+.left {
+	width: 60vw;
+	padding-left: 3vw;
+}
+
+.right {
+	width: 30vw;
+	padding-right: 3vw;
+}
+
+.section-title {
+	background: #f55;
+	display: flex;
+	justify-content: center;
+}
+/*///END COMMON///*/
+
+/*///NAV  BAR///*/
+#nav-bar {
+	width: 100vw;
+	height: 7vh;
+	background-color: #0e2f63;
+	position: fixed;
+	top: 0;
+
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+
+.nav-logo > img {
+	max-height: 6vh;
+	padding-left: 1vw;
+}
+#nav-items {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+}
+
+.nav-item {
+	border-right-style: solid;
+	border-right-color: black;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding-right: 1vw;
+	font-size: 2em;
+}
+
+/*///END NAV BAR///*/
+
+/*///RECENT ACTIVITY///*/
