@@ -1,7 +1,9 @@
 /*///COMMON///*/
 
 body {
+	background-clip: border-box;
 	font-family: 'Roboto Slab', serif;
+	background: #eae9e1;
 }
 
 #body {
@@ -16,7 +18,7 @@ body {
 }
 
 .left {
-	width: 60vw;
+	width: 40vw;
 	padding-left: 3vw;
 }
 
@@ -25,10 +27,23 @@ body {
 	padding-right: 3vw;
 }
 
+.section {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	margin: 2%;
+}
+
 .section-title {
 	background: #f55;
 	display: flex;
 	justify-content: center;
+
+	font-size: 1.75em;
+}
+
+.dropdown {
+	cursor: pointer;
 }
 /*///END COMMON///*/
 
@@ -70,3 +85,40 @@ body {
 /*///END NAV BAR///*/
 
 /*///RECENT ACTIVITY///*/
+#activities {
+	display: flex;
+	flex-direction: column;
+}
+
+.entry {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	border-style: none none solid none;
+	border-color: #eae9e1;
+}
+
+.entry > div {
+	border-style: none none none solid;
+	border-color: #eae9e1;
+}
+
+.entry > .first {
+	border-style: none;
+}
+
+/*///END RECENT ACTIVITY///*/
+
+/*///SUMS///*/
+
+#totals {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.total-title {
+	font-size: 1.5em;
+}
