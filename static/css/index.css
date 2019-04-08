@@ -10,6 +10,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	padding-top: 7vh;
+	justify-content: space-around;
 }
 
 .half {
@@ -18,7 +19,7 @@ body {
 }
 
 .left {
-	width: 40vw;
+	width: 45vw;
 	padding-left: 3vw;
 }
 
@@ -63,9 +64,10 @@ body {
 
 .nav-logo > img {
 	max-height: 6vh;
-	padding-left: 1vw;
+	padding: 1vw;
 }
-#nav-items {
+
+.nav-items {
 	display: flex;
 	flex-direction: row;
 	align-content: center;
@@ -73,13 +75,18 @@ body {
 }
 
 .nav-item {
-	border-right-style: solid;
-	border-right-color: black;
+	border-left-style: solid;
+	border-left-color: white;
 	display: flex;
 	align-content: center;
 	align-items: center;
-	padding-right: 1vw;
-	font-size: 2em;
+	padding:0 1vw 0 1vw;
+	font-size: 1.5em;
+	color: white;
+}
+
+.first {
+	border-style: none;
 }
 
 /*///END NAV BAR///*/
@@ -90,12 +97,16 @@ body {
 	flex-direction: column;
 }
 
+#activity-cat > div {
+	font-weight: bold;
+}
+
 .entry {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-content: center;
-	align-items: center;
+	align-items: stretch;
 	border-style: none none solid none;
 	border-color: #eae9e1;
 }
@@ -103,6 +114,8 @@ body {
 .entry > div {
 	border-style: none none none solid;
 	border-color: #eae9e1;
+	width: 20%;
+	padding: 3px;
 }
 
 .entry > .first {
