@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import Field, StringField, PasswordField, SubmitField, BooleanField
+from wtforms import Field, StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
+
+itemListTest = ['Hamburger', 'Cheeseburger', 'Fries', 'Hotdog']
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])
@@ -14,3 +16,17 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators = [DataRequired()])
     remember = BooleanField('Remember me')
     submit  = SubmitField('Login')
+
+class NewSaleForm(FlaskForm):
+	item = SelectField('item', choices=itemListTest)
+	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
+	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
+	amtCents = StringField('.', validators=[NumberRange(0, 2)])
+	submit = SubmitField('Enter')
+
+class NewPurchaseForm(FlaskForm):
+	item = SelectField('item', choices=itemListTest)
+	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
+	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
+	amtCents = StringField('.', validators=[NumberRange(0, 2)])
+	submit = SubmitField('Enter')

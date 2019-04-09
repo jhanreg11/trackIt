@@ -12,11 +12,13 @@ def home():
 def login():
     form = LoginForm();
     if form.validate_on_submit(): 
-    	flash('Welcome!', 'success');
     	return redirect(url_for('home'))
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if form.validate_on_submit():
+    	flash('Welcome new user!', 'success')
+    	return redirect(url_for('home'))
     return render_template('register.html', form=form)

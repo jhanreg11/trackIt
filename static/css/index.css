@@ -4,15 +4,19 @@ body {
 	background-clip: border-box;
 	font-family: 'Roboto Slab', serif;
 	background: #eae9e1;
+	position: relative;
+	top: 10vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 #body {
 	display: flex;
 	flex-direction: row;
-	padding-top: 7vh;
 	justify-content: space-around;
+	align-items: flex-start;
 }
 
 .half {
@@ -60,6 +64,18 @@ body {
 .small-txt > small > a:hover {
 	color: #474a4f;
 }
+
+.alert {
+	border-style: solid;
+	padding: 20px;
+	border-radius: 5%;
+}
+
+.alert-success {
+	background: #e7eae0;
+	border-color: #657a35;
+}
+
 /*///END COMMON///*/
 
 /*///NAV  BAR///*/
@@ -88,7 +104,7 @@ body {
 	align-items: center;
 }
 
-.nav-item {
+.nav-item > a{
 	border-left-style: solid;
 	border-left-color: white;
 	display: flex;
@@ -97,9 +113,14 @@ body {
 	padding:0 1vw 0 1vw;
 	font-size: 1.3em;
 	color: white;
+	text-decoration: none;
 }
 
-.first {
+.nav-item > a:hover {
+	color: gray;
+}
+
+.first > a {
 	border-style: none;
 }
 

@@ -23,3 +23,9 @@ legend {
 	width: 80%;
 	border-radius: 5%;
 }
+
+.remember {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
