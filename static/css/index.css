@@ -4,6 +4,8 @@ body {
 	background-clip: border-box;
 	font-family: 'Roboto Slab', serif;
 	background: #eae9e1;
+	display: flex;
+	justify-content: center;
 }
 
 #body {
@@ -46,6 +48,18 @@ body {
 .dropdown {
 	cursor: pointer;
 }
+
+.small-txt {
+	color: gray;
+}
+
+.small-txt > small > a {
+	color: gray;
+}
+
+.small-txt > small > a:hover {
+	color: #474a4f;
+}
 /*///END COMMON///*/
 
 /*///NAV  BAR///*/
@@ -81,7 +95,7 @@ body {
 	align-content: center;
 	align-items: center;
 	padding:0 1vw 0 1vw;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	color: white;
 }
 
@@ -90,48 +104,3 @@ body {
 }
 
 /*///END NAV BAR///*/
-
-/*///RECENT ACTIVITY///*/
-#activities {
-	display: flex;
-	flex-direction: column;
-}
-
-#activity-cat > div {
-	font-weight: bold;
-}
-
-.entry {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
-	align-items: stretch;
-	border-style: none none solid none;
-	border-color: #eae9e1;
-}
-
-.entry > div {
-	border-style: none none none solid;
-	border-color: #eae9e1;
-	width: 20%;
-	padding: 3px;
-}
-
-.entry > .first {
-	border-style: none;
-}
-
-/*///END RECENT ACTIVITY///*/
-
-/*///SUMS///*/
-
-#totals {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-.total-title {
-	font-size: 1.5em;
-}
