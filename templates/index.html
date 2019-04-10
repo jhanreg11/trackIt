@@ -131,7 +131,7 @@
             <div class="right half">
                 <div id="new-sale" class="section">
                     <div class="section-title">New Sale</div>
-                    <div id="new-body">
+                    <div class="new-body">
                         <form method="POST" actions="">
                             {{ saleForm.hidden_tag() }}
                             <fieldset class="sale-group">
@@ -154,8 +154,34 @@
                                 {{ saleForm.submit(Class='btn') }}
                             </div>
                         </form>
+                    </div>
                 </div>
                 <div id="new-purchase" class="section">
+                    <div class="section-title">New Purchase</div>
+                    <div class="new-body">
+                        <form method="POST" actions="">
+                            {{ purchForm.hidden_tag() }}
+                            <fieldset class="sale-group">
+                                <div class="sale-item">
+                                    {{ purchForm.item.label }}
+                                    {{ purchForm.item }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ purchForm.units.label }}
+                                    {{ purchForm.units }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ purchForm.amtDollars.label }}
+                                    {{ purchForm.amtDollars }}
+                                    {{ purchForm.amtCents.label }}
+                                    {{ purchForm.amtCents }}
+                                </div>
+                            </fieldset>
+                            <div>
+                                {{ purchForm.submit(Class='btn') }}
+                            </div>
+                        </form
+                    </div>
                 </div>
             </div>
         </div>

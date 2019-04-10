@@ -42,3 +42,25 @@
 .total-title {
 	font-size: 1.5em;
 }
+
+/*///END SUMS///*/
+
+/*///NEW SALE/PURCHASE///*/
+
+.new-body {
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.new-body > form {
+	height: 100%;
+}
+
+.sale-gorup {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
