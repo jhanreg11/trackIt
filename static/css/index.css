@@ -76,11 +76,6 @@ body {
 	border-color: #657a35;
 }
 
-.dollar-field {
-	display: flex;
-	flex-direction: row;
-}
-
 .dollar-field > .dollar-input {
 	width: 20%;
 }

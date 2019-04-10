@@ -61,3 +61,7 @@
 form > fieldset {
 	border-style: none;
 }
+
+fieldset > div {
+	padding: 1%;
+}
