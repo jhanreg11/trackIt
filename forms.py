@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import Field, StringField, PasswordField, SubmitField, BooleanField, SelectField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, NumberRange
 
-itemListTest = ['Hamburger', 'Cheeseburger', 'Fries', 'Hotdog']
+itemListTest = [('HB', 'Hamburger'), ('CB', 'Cheeseburger'), ('FR', 'Fries'), ('HD', 'Hotdog')]
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])

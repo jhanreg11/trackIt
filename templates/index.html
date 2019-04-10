@@ -132,9 +132,30 @@
                 <div id="new-sale" class="section">
                     <div class="section-title">New Sale</div>
                     <div id="new-body">
-                        <div class=""
+                        <form method="POST" actions="">
+                            {{ saleForm.hidden_tag() }}
+                            <fieldset class="sale-group">
+                                <div class="sale-item">
+                                    {{ saleForm.item.label }}
+                                    {{ saleForm.item }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ saleForm.units.label }}
+                                    {{ saleForm.units }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ saleForm.amtDollars.label }}
+                                    {{ saleForm.amtDollars }}
+                                    {{ saleForm.amtCents.label }}
+                                    {{ saleForm.amtCents }}
+                                </div>
+                            </fieldset>
+                            <div>
+                                {{ saleForm.submit(Class='btn') }}
+                            </div>
+                        </form>
                 </div>
-                <div id="new-purchase section">
+                <div id="new-purchase" class="section">
                 </div>
             </div>
         </div>
