@@ -48,7 +48,6 @@
 /*///NEW SALE/PURCHASE///*/
 
 .new-body {
-	height: 40vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -56,11 +55,9 @@
 
 .new-body > form {
 	height: 100%;
+	padding: 5%;
 }
 
-.sale-gorup {
-	height: 80%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+form > fieldset {
+	border-style: none;
 }

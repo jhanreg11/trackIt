@@ -16,9 +16,9 @@
             <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
             <div class="nav-items">
                 <div class="nav-item first"><a href="index.html">HOME</a></div>
-                <div class="nav-item"><a href="sales.html">SALES</a></div>
-                <div class="nav-item"><a href="sales.html">PURCHASES</a></div>
-                <div class="nav-item"><a href="login.html">LOG OUT</a></div>
+                <div class="nav-item"><a href="">SALES</a></div>
+                <div class="nav-item"><a href="">PURCHASES</a></div>
+                <div class="nav-item"><a href="{{ url_for('login') }}">LOG OUT</a></div>
             </div>
         </div>
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -143,11 +143,11 @@
                                     {{ saleForm.units.label }}
                                     {{ saleForm.units }}
                                 </div>
-                                <div class="sale-item">
-                                    {{ saleForm.amtDollars.label }}
-                                    {{ saleForm.amtDollars }}
+                                <div class="sale-item dollar-field">
+                                    {{ saleForm.amtDollars.label }}&nbsp;
+                                    {{ saleForm.amtDollars(Class="dollar-input") }}
                                     {{ saleForm.amtCents.label }}
-                                    {{ saleForm.amtCents }}
+                                    {{ saleForm.amtCents(Class="cents-input") }}
                                 </div>
                             </fieldset>
                             <div>
@@ -170,11 +170,11 @@
                                     {{ purchForm.units.label }}
                                     {{ purchForm.units }}
                                 </div>
-                                <div class="sale-item">
-                                    {{ purchForm.amtDollars.label }}
-                                    {{ purchForm.amtDollars }}
+                                <div class="sale-item dollar-field">
+                                    {{ purchForm.amtDollars.label }}&nbsp;
+                                    {{ purchForm.amtDollars(Class="dollar-input") }}
                                     {{ purchForm.amtCents.label }}
-                                    {{ purchForm.amtCents }}
+                                    {{ purchForm.amtCents(Class="cents-input") }}
                                 </div>
                             </fieldset>
                             <div>

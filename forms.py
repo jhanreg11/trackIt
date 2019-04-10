@@ -18,7 +18,7 @@ class LoginForm(FlaskForm):
     submit  = SubmitField('Login')
 
 class NewEntryForm(FlaskForm):
-	item = SelectField('item', choices=itemListTest)
+	item = SelectField('Item', choices=itemListTest)
 	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
 	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
 	amtCents = StringField('.', validators=[NumberRange(0, 2)])

@@ -76,6 +76,19 @@ body {
 	border-color: #657a35;
 }
 
+.dollar-field {
+	display: flex;
+	flex-direction: row;
+}
+
+.dollar-field > .dollar-input {
+	width: 20%;
+}
+
+.dollar-field > .cents-input {
+	width: 15%;
+}
+
 /*///END COMMON///*/
 
 /*///NAV  BAR///*/
