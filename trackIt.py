@@ -6,7 +6,7 @@ app.config['SECRET_KEY'] = '31f214ac7307802de7160100ec7a549b'
 
 @app.route("/", methods=['GET' ,'POST'])
 def home():
-    return render_template('index.html', saleForm=forms.NewSaleForm(), purchForm=forms.NewPurchaseForm())
+    return render_template('index.html', saleForm=forms.NewEntryForm(), purchForm=forms.NewEntryForm())
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

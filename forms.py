@@ -17,14 +17,7 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember me')
     submit  = SubmitField('Login')
 
-class NewSaleForm(FlaskForm):
-	item = SelectField('item', choices=itemListTest)
-	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
-	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
-	amtCents = StringField('.', validators=[NumberRange(0, 2)])
-	submit = SubmitField('Enter')
-
-class NewPurchaseForm(FlaskForm):
+class NewEntryForm(FlaskForm):
 	item = SelectField('item', choices=itemListTest)
 	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
 	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
