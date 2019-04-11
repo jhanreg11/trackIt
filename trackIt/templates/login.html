@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>trackIt</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+        <script type="text/javascript" src="../static/js/index.js"></script>
+	<link rel="shortcut icon" type="image/png" href="../static/img/favicon.png"/>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
+        </div>
+
+        <div class="section" id="login">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="login-group">
+                    <legend>Login</legend>
+                    <div class="login-item">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-input") }}
+                    </div>
+                    <div class="login-item">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-input") }}
+                    </div>
+                    <div class="login-item remember">
+                        {{ form.remember.label(class="form-label") }}
+                        {{ form.remember(class="form-input") }}
+                    </div>
+                </fieldset>
+                <div>
+                    {{ form.submit(class="btn") }}
+                </div>
+            </form>
+            <div class="small-txt"><small>Don't have an account? <a href="{{ url_for('register') }}">Create one</a></small></div>
+        </div>

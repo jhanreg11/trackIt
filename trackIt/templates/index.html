@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>trackIt</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/home.css">
+        <script type="text/javascript" src="../static/js/index.js"></script>
+	<link rel="shortcut icon" type="image/png" href="../static/img/favicon.png"/>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
+            <div class="nav-items">
+                <div class="nav-item first"><a href="index.html">HOME</a></div>
+                <div class="nav-item"><a href="">SALES</a></div>
+                <div class="nav-item"><a href="">PURCHASES</a></div>
+                <div class="nav-item"><a href="{{ url_for('login') }}">LOG OUT</a></div>
+            </div>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages: %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div id="body">
+            <div class="left half">
+                <div id="recent-activity" class="section">
+                    <div class="section-title">Recent Activity</div>
+                    <div id="activities">
+                        <div id="activity-cat" class="entry">
+                            <div class="first">Category</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Hamburgers and Fries</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>  
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>  
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>  
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>  
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>  
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>
+                        <div class="entry">
+                            <div class="first">Sale</div>
+                            <div>Item</div>
+                            <div>Units</div>
+                            <div>Amount ($)</div>
+                            <div>Date (mm/dd/yy)</div>
+                        </div>                            
+                    </div>
+                </div>
+
+                <div id="sums" class="section">
+                    <div class="section-title">This Month<div class="sums dropdown">▾</div></div>
+                    <div id="totals">
+                        <div class="total">
+                            <div class="total-title">Sales</div>
+                            <div class="total-amt">$0.00</div>
+                        </div>
+                        <div class="total">
+                            <div class="total-title">Purchases</div>
+                            <div class="total-amt">$0.00</div>
+                        </div>
+                        <div class="total">
+                            <div class="total-title">Profit</div>
+                            <div class="total-amt">$0.00</div>
+                        </div>
+                    </div>                                               
+                </div>
+
+            </div>
+
+            <div class="right half">
+                <div id="new-sale" class="section">
+                    <div class="section-title">New Sale</div>
+                    <div class="new-body">
+                        <form method="POST" actions="">
+                            {{ saleForm.hidden_tag() }}
+                            <fieldset class="sale-group">
+                                <div class="sale-item">
+                                    {{ saleForm.item.label }}
+                                    {{ saleForm.item }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ saleForm.units.label }}
+                                    {{ saleForm.units }}
+                                </div>
+                                <div class="sale-item dollar-field">
+                                    {{ saleForm.amtDollars.label }}&nbsp;
+                                    {{ saleForm.amtDollars(Class="dollar-input") }}
+                                    {{ saleForm.amtCents.label }}
+                                    {{ saleForm.amtCents(Class="cents-input") }}
+                                </div>
+                            </fieldset>
+                            <div>
+                                {{ saleForm.submit(Class='btn') }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="new-purchase" class="section">
+                    <div class="section-title">New Purchase</div>
+                    <div class="new-body">
+                        <form method="POST" actions="">
+                            {{ purchForm.hidden_tag() }}
+                            <fieldset class="sale-group">
+                                <div class="sale-item">
+                                    {{ purchForm.item.label }}
+                                    {{ purchForm.item }}
+                                </div>
+                                <div class="sale-item">
+                                    {{ purchForm.units.label }}
+                                    {{ purchForm.units }}
+                                </div>
+                                <div class="sale-item dollar-field">
+                                    {{ purchForm.amtDollars.label }}&nbsp;
+                                    {{ purchForm.amtDollars(Class="dollar-input") }}
+                                    {{ purchForm.amtCents.label }}
+                                    {{ purchForm.amtCents(Class="cents-input") }}
+                                </div>
+                            </fieldset>
+                            <div>
+                                {{ purchForm.submit(Class='btn') }}
+                            </div>
+                        </form
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

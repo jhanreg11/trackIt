@@ -1,0 +1,25 @@
+#register {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin: 10%;
+	width: 50vw;
+}
+
+.register-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+legend {
+	font-size: 2em;
+	display: flex;
+	margin: auto;
+}
+
+.form-input {
+	width: 80%;
+	border-radius: 5%;
+}
