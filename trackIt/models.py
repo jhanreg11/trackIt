@@ -30,3 +30,5 @@ class Entry(db.Model):
 
 	def __repr__(self):
 		return "Entry: item_id('%S') id(%d)\n" % self.item_id, self.id
+
+db.create_all()
