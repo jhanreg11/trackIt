@@ -93,6 +93,11 @@ fieldset > div {
 	width: 15%;
 }
 
+.invalid {
+	color: red;
+	font-size: .8em;
+}
+
 /*///END COMMON///*/
 
 /*///NAV  BAR///*/

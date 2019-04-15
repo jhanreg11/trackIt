@@ -24,18 +24,46 @@
                     <div class="register-item">
                         {{ form.username.label(class_="form-label") }}
                         {{ form.username(class_="form-input") }}
+                        {% if form.username.errors %}
+                            <div class='invalid'>
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="register-item">
                         {{ form.email.label(class_="form-label") }}
                         {{ form.email(class_="form-input") }}
+                        {% if form.email.errors %}
+                            <div class='invalid'>
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="register-item">
                         {{ form.password.label(class_="form-label") }}
                         {{ form.password(class_="form-input") }}
+                        {% if form.password.errors %}
+                            <div class='invalid'>
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="register-item">
                         {{ form.passwordConf.label(class="form-label") }}
                         {{ form.passwordConf(class="form-input") }}
+                        {% if form.passwordConf.errors %}
+                            <div class='invalid'>
+                                {% for error in form.passwordConf.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                 </fieldset>
                 <div>
