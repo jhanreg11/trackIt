@@ -8,8 +8,13 @@ class User(db.Model):
 	email = db.Column(db.String(50), nullable=False, default='none@none.com')
 	items = db.relationship('Item', backref='user', lazy=True)
 
+	def __init__(self, username, email, password):
+		self.username = username
+		self.password = password
+		self.email = email
+
 	def __repr__(self):
-		return "User('%S') id(%d)\n" % self.username, self.id
+		return "User('%r') id(%d)\n" % (self.username, self.id)
 
 class Item(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -20,7 +25,7 @@ class Item(db.Model):
 	entries = db.relationship('Entry', backref='item', lazy=True)
 
 	def __repr__(self):
-		return "Item('%S') id(%d)\n" % self.name, self.id
+		return "Item('%S') id(%d)\n" % (self.name, self.id)
 
 class Entry(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -29,6 +34,4 @@ class Entry(db.Model):
 	item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
 
 	def __repr__(self):
-		return "Entry: item_id('%S') id(%d)\n" % self.item_id, self.id
-
-db.create_all()
+		return "Entry: item_id('%S') id(%d)\n" % (self.item_id, self.id)

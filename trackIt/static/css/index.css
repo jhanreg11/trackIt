@@ -76,6 +76,15 @@ body {
 	border-color: #657a35;
 }
 
+form > fieldset {
+	border-style: none;
+}
+
+fieldset > div {
+	padding: 1%;
+}
+
+
 .dollar-field > .dollar-input {
 	width: 20%;
 }
