@@ -76,6 +76,11 @@ body {
 	border-color: #657a35;
 }
 
+.alert-failure {
+	background: #ffa5a5;
+	border-color: red;
+}
+
 form > fieldset {
 	border-style: none;
 }

@@ -15,7 +15,7 @@
         <div id="nav-bar">
             <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
             <div class="nav-items">
-                <div class="nav-item first"><a href="index.html">HOME</a></div>
+                <div class="nav-item first"><a href="{{ url_for('home') }}">HOME</a></div>
                 <div class="nav-item"><a href="">SALES</a></div>
                 <div class="nav-item"><a href="">PURCHASES</a></div>
                 <div class="nav-item"><a href="{{ url_for('login') }}">LOG OUT</a></div>
@@ -30,6 +30,8 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
+        {{ current_user.username }}
+
         <div id="body">
             <div class="left half">
                 <div id="recent-activity" class="section">

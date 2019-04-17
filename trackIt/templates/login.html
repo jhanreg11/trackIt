@@ -15,6 +15,15 @@
         <div id="nav-bar">
             <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
         </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages: %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
 
         <div class="section" id="login">
             <form method="POST" action="">
@@ -24,10 +33,24 @@
                     <div class="login-item">
                         {{ form.username.label(class="form-label") }}
                         {{ form.username(class="form-input") }}
+                        {% if form.username.errors %}
+                            <div class='invalid'>
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="login-item">
                         {{ form.password.label(class="form-label") }}
                         {{ form.password(class="form-input") }}
+                        {% if form.password.errors %}
+                            <div class='invalid'>
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="login-item remember">
                         {{ form.remember.label(class="form-label") }}
