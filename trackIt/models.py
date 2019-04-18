@@ -34,9 +34,10 @@ class Item(db.Model):
 
 class Entry(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
+	item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
+	units = db.Column(db.Integer, nullable=False, default=0)
 	amt = db.Column(db.Float(precision=2, asdecimal=True), nullable=False, default=0)
 	date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-	item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
 
 	def __repr__(self):
 		return "Entry: item_id('%S') id(%d)\n" % (self.item_id, self.id)

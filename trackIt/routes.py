@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, current_user, logout_user, login_required
 from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
@@ -17,7 +17,8 @@ def login():
 		user = User.query.filter_by(username=form.username.data).first()
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember.data)
-			return redirect(url_for('home'))
+			next_page = request.args.get('next')
+			return redirect(next_page) if next_page else redirect(url_for('home'))
 		else:
 			flash('Login Unsuccessful', 'failure')
 	return render_template('login.html', form=form)
@@ -38,4 +39,11 @@ def register():
 @app.route('/logout')
 def logout():
 	logout_user()
-	return redirect(url_for('home'))
+	return redirect(url_for('login'))
+
+@app.route('/sales_record')
+@login_required
+def sales_record():
+	user_id = current_user.id
+	entries = Entry.query.filter_by(id=user_id).all()
+	return render_template('sales.html', entries=entries, Item=Item)
