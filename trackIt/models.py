@@ -35,6 +35,7 @@ class Item(db.Model):
 class Entry(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
+	#item = db.relationship('item', foreign_keys='Entry.item_id')
 	units = db.Column(db.Integer, nullable=False, default=0)
 	amt = db.Column(db.Float(precision=2, asdecimal=True), nullable=False, default=0)
 	date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)

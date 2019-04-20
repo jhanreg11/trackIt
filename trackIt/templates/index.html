@@ -145,10 +145,8 @@
                                     {{ saleForm.units }}
                                 </div>
                                 <div class="sale-item dollar-field">
-                                    {{ saleForm.amtDollars.label }}&nbsp;
-                                    {{ saleForm.amtDollars(Class="dollar-input") }}
-                                    {{ saleForm.amtCents.label }}
-                                    {{ saleForm.amtCents(Class="cents-input") }}
+                                    {{ saleForm.amt.label }}
+                                    {{ saleForm.amt }}
                                 </div>
                             </fieldset>
                             <div>
@@ -172,16 +170,35 @@
                                     {{ purchForm.units }}
                                 </div>
                                 <div class="sale-item dollar-field">
-                                    {{ purchForm.amtDollars.label }}&nbsp;
-                                    {{ purchForm.amtDollars(Class="dollar-input") }}
-                                    {{ purchForm.amtCents.label }}
-                                    {{ purchForm.amtCents(Class="cents-input") }}
+                                    {{ saleForm.amt.label }}
+                                    {{ saleForm.amt }}
                                 </div>
                             </fieldset>
                             <div>
                                 {{ purchForm.submit(Class='btn') }}
                             </div>
-                        </form
+                        </form>
+                    </div>
+                </div>
+                <div id="new-item" class="section">
+                    <div class="section-title">New Item</div>
+                    <div class="new-body">
+                        <form method="POST" actions="">
+                            {{ itemForm.hidden_tag() }}
+                            <fieldset class="sale-group">
+                                <div class="sale-item">
+                                    {{ itemForm.name.label }}
+                                    {{ itemForm.name }}
+                                </div>
+                                <div class="sale-item dollar-field">
+                                    {{ saleForm.amt.label }}
+                                    {{ saleForm.amt }}
+                                </div>
+                            </fieldset>
+                            <div>
+                                {{ itemForm.submit(Class='btn') }}
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

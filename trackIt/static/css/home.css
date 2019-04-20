@@ -57,11 +57,3 @@
 	height: 100%;
 	padding: 5%;
 }
-
-form > fieldset {
-	border-style: none;
-}
-
-fieldset > div {
-	padding: 1%;
-}

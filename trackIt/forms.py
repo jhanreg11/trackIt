@@ -1,38 +1,42 @@
 from flask_wtf import FlaskForm
-from wtforms import Field, StringField, PasswordField, SubmitField, BooleanField, SelectField
+from wtforms import Field, StringField, PasswordField, SubmitField, BooleanField, SelectField, DecimalField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, NumberRange, ValidationError
-from trackIt.models import User
 
-itemListTest = [('HB', 'Hamburger'), ('CB', 'Cheeseburger'), ('FR', 'Fries'), ('HD', 'Hotdog')]
+from flask_login import current_user
+
+from trackIt import db
+from trackIt.models import User, Item
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email', validators = [DataRequired(), Email()])
-    password = PasswordField('Password', validators = [DataRequired()])
-    passwordConf = PasswordField('Confirm Password', validators = [DataRequired(), EqualTo('password')])
-    submit  = SubmitField('Sign up')
+	username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])
+	email = StringField('Email', validators = [DataRequired(), Email()])
+	password = PasswordField('Password', validators = [DataRequired()])
+	passwordConf = PasswordField('Confirm Password', validators = [DataRequired(), EqualTo('password')])
+	submit  = SubmitField('Sign up')
 
-    def validate_username(self, username):
-        user  = User.query.filter_by(username=username.data).first()
-        if user:
-            raise ValidationError('That username is already taken.')
+	def validate_username(self, username):
+		user  = User.query.filter_by(username=username.data).first()
+		if user:
+			raise ValidationError('That username is already taken.')
 
-    def validate_password(self, password):
-        user  = User.query.filter_by(password=password.data).first()
-        if user:
-            raise ValidationError('That password is already taken.')
-
-
+	def validate_password(self, password):
+		user  = User.query.filter_by(password=password.data).first()
+		if user:
+			raise ValidationError('That password is already taken. ')
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])
-    password = PasswordField('Password', validators = [DataRequired()])
-    remember = BooleanField('Remember me')
-    submit  = SubmitField('Login')
+	username = StringField('Username', validators = [DataRequired(), Length(min=2, max=20)])
+	password = PasswordField('Password', validators = [DataRequired()])
+	remember = BooleanField('Remember me')
+	submit  = SubmitField('Login')
 
 class NewEntryForm(FlaskForm):
-	item = SelectField('Item', choices=itemListTest)
-	units = StringField('Units', validators=[DataRequired(), NumberRange(min=1, message="Please enter a positive number.")])
-	amtDollars = StringField('Amount$ (optional)', validators = [NumberRange(message="Please enter a number.")])
-	amtCents = StringField('.', validators=[NumberRange(0, 2)])
+	item = SelectField('Item', choices=[(0, 'None')])
+	units = IntegerField('Units', validators=[DataRequired()])
+	amt = DecimalField('Price Per Unit ($)', validators = [DataRequired()], places=2, rounding=None)
+	submit = SubmitField('Enter')
+
+class NewItemForm(FlaskForm):
+	name = StringField('Name', validators = [DataRequired(), Length(min=1, max=20)])
+	amt = DecimalField('Price Per Unit ($)', validators = [DataRequired()], places=2, rounding=None)
 	submit = SubmitField('Enter')

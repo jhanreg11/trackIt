@@ -21,6 +21,8 @@
         </div>
         {% for entry in entries %}
             <div class="entry">
-            <div class="first">{{ Item.query.filter_by(id=entry.item_id).first() }}
+            <div class="first">{{ Item.query.filter_by(id=entry.item_id).first() }}</div>
+            <div>{{ entry.amt }}</div>
+            <div>{{ entry.}}
         {% endfor %}
     </body>

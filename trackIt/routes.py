@@ -2,13 +2,41 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, current_user, logout_user, login_required
 from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
-from trackIt.forms import NewEntryForm, LoginForm, RegistrationForm
-
+from trackIt.forms import NewEntryForm, LoginForm, RegistrationForm, NewItemForm
 
 @app.route("/home", methods=['GET' ,'POST'])
 @login_required
 def home():
-	return render_template('index.html', saleForm=NewEntryForm(), purchForm=NewEntryForm())
+	#itemList = NewEntryForm.choices
+	#for x in current_user.items:
+	#	itemList += (x.id, x.name)
+	#print(itemList)
+
+	itemForm = NewItemForm()
+	saleForm = NewEntryForm()
+	purchForm = NewEntryForm()
+
+	#purchForm.item.choices = itemList
+	#saleForm.item.choices = itemList
+
+	if purchForm.validate_on_submit():
+		item = Item.query.filter_by(id=purchForm.item.data).first()
+		if purchForm.amt.data:
+			amt = -(purchForm.amt.data * purchForm.units.data)
+		else:
+			amt = -(units * item.price)
+		purch = Entry(item=item, units=purchForm.units.data, amt=amt)
+		db.session.add(purch)
+		db.session.commit()
+
+	if saleForm.validate_on_submit():
+		print("Alabaster")
+
+	if itemForm.validate_on_submit():
+		item = Item(name=itemForm.name.data, price=itemForm.amt.data, user_id=current_user.id)
+		db.session.add(item)
+		db.session.commit()
+	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm)
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -30,6 +58,10 @@ def register():
 		hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
 		user = User(username=form.username.data, password=hashed_pw, email=form.email.data)
 		db.session.add(user)
+		db.session.commit()
+		db.session.refresh(user)
+		nullItem = Item(name='None', price=0, user_id=user.id)
+		db.session.add(nullItem)
 		db.session.commit()
 		flash('Welcome new user!', 'success')
 		return redirect(url_for('login'))

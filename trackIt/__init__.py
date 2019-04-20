@@ -12,5 +12,7 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt()
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
+
 
 from trackIt import routes
