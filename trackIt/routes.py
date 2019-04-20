@@ -33,9 +33,14 @@ def home():
 		print("Alabaster")
 
 	if itemForm.validate_on_submit():
+		print('\n\nitem form submitted\n\n')
 		item = Item(name=itemForm.name.data, price=itemForm.amt.data, user_id=current_user.id)
 		db.session.add(item)
 		db.session.commit()
+		purchForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
+		saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
+		itemForm.name.data = None
+		itemForm.amt.data = None
 	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm)
 
 @app.route('/', methods=['GET', 'POST'])

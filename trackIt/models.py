@@ -30,7 +30,7 @@ class Item(db.Model):
 	entries = db.relationship('Entry', backref='item', lazy=True)
 
 	def __repr__(self):
-		return "Item('%S') id(%d)\n" % (self.name, self.id)
+		return "Item Exists"
 
 class Entry(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -41,4 +41,4 @@ class Entry(db.Model):
 	date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
 	def __repr__(self):
-		return "Entry: item_id('%S') id(%d)\n" % (self.item_id, self.id)
+		return "Entry: item_id({}) id({})\n".format(self.item_id, self.id)

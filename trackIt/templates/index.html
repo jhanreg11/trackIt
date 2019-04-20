@@ -170,8 +170,8 @@
                                     {{ purchForm.units }}
                                 </div>
                                 <div class="sale-item dollar-field">
-                                    {{ saleForm.amt.label }}
-                                    {{ saleForm.amt }}
+                                    {{ purchForm.amt.label }}
+                                    {{ purchForm.amt }}
                                 </div>
                             </fieldset>
                             <div>
@@ -189,10 +189,24 @@
                                 <div class="sale-item">
                                     {{ itemForm.name.label }}
                                     {{ itemForm.name }}
+                                    {% if itemForm.name.errors %}
+                                        <div class='invalid'>
+                                        {% for error in itemForm.name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="sale-item dollar-field">
-                                    {{ saleForm.amt.label }}
-                                    {{ saleForm.amt }}
+                                    {{ itemForm.amt.label }}
+                                    {{ itemForm.amt }}
+                                    {% if itemForm.amt.errors %}
+                                        <div class='invalid'>
+                                            {% for error in itemForm.amt.errors %}
+                                                <span>{{ error }}</span>
+                                                {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </fieldset>
                             <div>

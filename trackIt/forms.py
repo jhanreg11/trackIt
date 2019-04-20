@@ -40,3 +40,8 @@ class NewItemForm(FlaskForm):
 	name = StringField('Name', validators = [DataRequired(), Length(min=1, max=20)])
 	amt = DecimalField('Price Per Unit ($)', validators = [DataRequired()], places=2, rounding=None)
 	submit = SubmitField('Enter')
+
+	def validate_name(self, name):
+		item = Item.query.filter_by(user_id=current_user.id, name = str(self.name.data)).first()
+		if item:
+			raise ValidationError('You have already created an item with this name.')
