@@ -16,8 +16,8 @@ def home():
 	saleForm = NewEntryForm()
 	purchForm = NewEntryForm()
 
-	#purchForm.item.choices = itemList
-	#saleForm.item.choices = itemList
+	purchForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
+	saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 
 	if purchForm.validate_on_submit():
 		item = Item.query.filter_by(id=purchForm.item.data).first()
