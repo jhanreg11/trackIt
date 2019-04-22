@@ -28,9 +28,22 @@ def home():
 		purch = Entry(item=item, units=purchForm.units.data, amt=amt)
 		db.session.add(purch)
 		db.session.commit()
+		purchForm.item.data = 0
+		purchForm.units.data = 0
+		purchForm.amt.data = 0
 
 	if saleForm.validate_on_submit():
-		print("Alabaster")
+		item = Item.query.filter_by(id=saleForm.item.data).first()
+		if saleForm.amt.data:
+			amt = (saleForm.amt.data * saleForm.units.data)
+		else:
+			amt = (units * item.price)
+		sale = Entry(item=item, units=saleForm.units.data, amt=amt)
+		db.session.add(sale)
+		db.session.commit()
+		saleForm.item.data = 0
+		saleForm.units.data = 0
+		saleForm.amt.data = 0
 
 	if itemForm.validate_on_submit():
 		print('\n\nitem form submitted\n\n')

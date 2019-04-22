@@ -110,7 +110,14 @@
                 </div>
 
                 <div id="sums" class="section">
-                    <div class="section-title">This Month<div class="sums dropdown">▾</div></div>
+                    <div class="dropdown">
+                        <div class="section-title"><button onclick="toggleDropdown()" class="dropbtn">This Month▾</button></div>
+                        <div class="dropdown-content">
+                            <a href="#">This Year▾</a>
+                            <a href="#">This Quarter▾</a>
+                            <a href="#">This week▾</a>
+                        </div>
+                    </div>
                     <div id="totals">
                         <div class="total">
                             <div class="total-title">Sales</div>
@@ -146,11 +153,11 @@
                                 </div>
                                 <div class="sale-item dollar-field">
                                     {{ saleForm.amt.label }}
-                                    {{ saleForm.amt }}
+                                    {{ saleForm.amt(Id='sale-amt') }}
                                 </div>
                             </fieldset>
                             <div>
-                                {{ saleForm.submit(Class='btn') }}
+                                {{ saleForm.submitEntry(Id='sale-submit', Class='btn') }}
                             </div>
                         </form>
                     </div>
@@ -171,11 +178,11 @@
                                 </div>
                                 <div class="sale-item dollar-field">
                                     {{ purchForm.amt.label }}
-                                    {{ purchForm.amt }}
+                                    {{ purchForm.amt(Id='purch-amt') }}
                                 </div>
                             </fieldset>
                             <div>
-                                {{ purchForm.submit(Class='btn') }}
+                                {{ purchForm.submitEntry(Id='purch-sumbit',Class='btn') }}
                             </div>
                         </form>
                     </div>
@@ -199,7 +206,7 @@
                                 </div>
                                 <div class="sale-item dollar-field">
                                     {{ itemForm.amt.label }}
-                                    {{ itemForm.amt }}
+                                    {{ itemForm.amt(Id='item-amt') }}
                                     {% if itemForm.amt.errors %}
                                         <div class='invalid'>
                                             {% for error in itemForm.amt.errors %}
@@ -210,7 +217,7 @@
                                 </div>
                             </fieldset>
                             <div>
-                                {{ itemForm.submit(Class='btn') }}
+                                {{ itemForm.submitItem(Class='btn') }}
                             </div>
                         </form>
                     </div>

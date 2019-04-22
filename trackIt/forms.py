@@ -33,13 +33,13 @@ class LoginForm(FlaskForm):
 class NewEntryForm(FlaskForm):
 	item = SelectField('Item', choices=[(0, 'None')])
 	units = IntegerField('Units', validators=[DataRequired()])
-	amt = DecimalField('Price Per Unit ($)', validators = [DataRequired()], places=2, rounding=None)
-	submit = SubmitField('Enter')
+	amt = DecimalField('Price Per Unit ($)', places=2, rounding=None)
+	submitEntry = SubmitField('Enter')
 
 class NewItemForm(FlaskForm):
 	name = StringField('Name', validators = [DataRequired(), Length(min=1, max=20)])
 	amt = DecimalField('Price Per Unit ($)', validators = [DataRequired()], places=2, rounding=None)
-	submit = SubmitField('Enter')
+	submitItem = SubmitField('Enter')
 
 	def validate_name(self, name):
 		item = Item.query.filter_by(user_id=current_user.id, name = str(self.name.data)).first()
