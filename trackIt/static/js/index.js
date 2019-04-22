@@ -1,7 +1,9 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function toggleDropdown() {
-  document.getElementById("dropdown").classList.toggle("show");
+function generateDropdown(top) {
+  if (top.html == 'This Month▾') {
+
+  }
 }
 
 // Close the dropdown menu if the user clicks outside of it
@@ -17,3 +19,12 @@ window.onclick = function(event) {
     }
   }
 }
+$(document).ready(function() {
+  $('#dropbtn').click(function() {
+    if ($('.dropdown-content').hasClass('active')) {
+      $('.dropdown-content').removeClass('active')
+    } else {
+      $('.dropdown-content').addClass('active')
+    }
+  })
+})

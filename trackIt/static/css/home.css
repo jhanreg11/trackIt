@@ -32,7 +32,7 @@
 /*///END RECENT ACTIVITY///*/
 
 /*///SUMS///*/
-.dropbtn {
+#dropbtn {
   border: none;
   cursor: pointer;
   background: #f55;
@@ -63,8 +63,10 @@
 
 .dropdown a:hover {background-color: #ddd;}
 
-.show > .dropdown-content {display: flex;}
-
+.active {
+	display: flex;
+	position: static;
+}
 #totals {
 	display: flex;
 	flex-direction: row;
