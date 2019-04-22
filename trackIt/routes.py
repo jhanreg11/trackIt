@@ -3,7 +3,23 @@ from flask_login import login_user, current_user, logout_user, login_required
 from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
 from trackIt.forms import NewEntryForm, LoginForm, RegistrationForm, NewItemForm
+from datetime import datetime, timedelta
+# generates the sales/purchases/profit given a date
+def generateTotals(e, date):
+	user = User.query.filter_by(id=e).first()
+	info = {'sales': 0, 'purchs': 0, 'profit': 0}
+	entries = []
+	for x in user.items:
+		entries += x.entries
+	for x in entries:
+		if x.date >= date:
+			info['profit']+= x.amt
+			if x.amt <= 0:
+				info['purchases'] += -(x.amt)
+			else:
+				info['sales'] += x.amt
 
+	return info
 @app.route("/home", methods=['GET' ,'POST'])
 @login_required
 def home():
@@ -19,6 +35,8 @@ def home():
 	purchForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 	saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 
+	info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
+
 	if purchForm.validate_on_submit():
 		item = Item.query.filter_by(id=purchForm.item.data).first()
 		if purchForm.amt.data:
@@ -31,6 +49,7 @@ def home():
 		purchForm.item.data = 0
 		purchForm.units.data = 0
 		purchForm.amt.data = 0
+		info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
 
 	if saleForm.validate_on_submit():
 		item = Item.query.filter_by(id=saleForm.item.data).first()
@@ -44,6 +63,7 @@ def home():
 		saleForm.item.data = 0
 		saleForm.units.data = 0
 		saleForm.amt.data = 0
+		info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
 
 	if itemForm.validate_on_submit():
 		print('\n\nitem form submitted\n\n')
@@ -54,7 +74,7 @@ def home():
 		saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 		itemForm.name.data = None
 		itemForm.amt.data = None
-	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm)
+	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm, sales=info['sales'], purchs=info['purchs'], profit=info['profit'])
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
