@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, current_user, logout_user, login_required
 from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
-from trackIt.forms import NewEntryForm, LoginForm, RegistrationForm, NewItemForm
+from trackIt.forms import NewSaleForm, NewPurchForm, LoginForm, RegistrationForm, NewItemForm
 from datetime import datetime, timedelta
 # generates the sales/purchases/profit given a date
 def generateTotals(e, date):
@@ -28,16 +28,17 @@ def home():
 	#	itemList += (x.id, x.name)
 	#print(itemList)
 
-	itemForm = NewItemForm()
-	saleForm = NewEntryForm()
-	purchForm = NewEntryForm()
+	itemForm = NewItemForm(prefix='itemForm')
+	saleForm = NewSaleForm(prefix='saleForm')
+	purchForm = NewPurchForm(prefix='purchForm')
 
 	purchForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 	saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 
 	info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
 
-	if purchForm.validate_on_submit():
+	if purchForm.validate_on_submit() and purchForm.submitPurch.data:
+		print("purch submitted")
 		item = Item.query.filter_by(id=purchForm.item.data).first()
 		if purchForm.amt.data:
 			amt = -(purchForm.amt.data * purchForm.units.data)
@@ -51,12 +52,13 @@ def home():
 		purchForm.amt.data = 0
 		info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
 
-	if saleForm.validate_on_submit():
+	if saleForm.validate_on_submit() and saleForm.submitSale.data:
+		print('sale submitted')
 		item = Item.query.filter_by(id=saleForm.item.data).first()
 		if saleForm.amt.data:
 			amt = (saleForm.amt.data * saleForm.units.data)
 		else:
-			amt = (units * item.price)
+			amt = (saleForm.units.data * item.price)
 		sale = Entry(item=item, units=saleForm.units.data, amt=amt)
 		db.session.add(sale)
 		db.session.commit()
@@ -65,7 +67,7 @@ def home():
 		saleForm.amt.data = 0
 		info = generateTotals(current_user.id, datetime.utcnow() - timedelta(days=7))
 
-	if itemForm.validate_on_submit():
+	if itemForm.validate_on_submit() and itemForm.submitItem.data:
 		print('\n\nitem form submitted\n\n')
 		item = Item(name=itemForm.name.data, price=itemForm.amt.data, user_id=current_user.id)
 		db.session.add(item)
@@ -74,6 +76,7 @@ def home():
 		saleForm.item.choices = [(x.id, x.name) for x in Item.query.filter_by(user_id=current_user.id).all()]
 		itemForm.name.data = None
 		itemForm.amt.data = None
+
 	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm, sales=info['sales'], purchs=info['purchs'], profit=info['profit'])
 
 @app.route('/', methods=['GET', 'POST'])
