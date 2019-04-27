@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, jsonify
 from flask_login import login_user, current_user, logout_user, login_required
 from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
@@ -18,8 +18,38 @@ def generateTotals(e, date):
 				info['purchases'] += -(x.amt)
 			else:
 				info['sales'] += x.amt
-
 	return info
+
+# sorts list of entries by date
+def sort(list):
+	if len(list) > 1:
+		mid = len(list)//2
+		L = list[:mid]
+		R =list[mid:]
+		sort(L)
+		sort(R)
+
+		i = j = k = 0
+
+		while i < len(L) and j < len(R):
+			if L[i].date >= R[j].date:
+				list[k] = L[i]
+				i+=1
+			else:
+				list[k] = R[j]
+				j+=1
+			k+=1
+
+		while i < len(L):
+			list[k] = L[i]
+			k+=1
+			i+=1
+
+		while j < len(R):
+			list[k] = R[j]
+			k+=1
+			j+=1
+
 @app.route("/home", methods=['GET' ,'POST'])
 @login_required
 def home():
@@ -120,3 +150,16 @@ def sales_record():
 	user_id = current_user.id
 	entries = Entry.query.filter_by(id=user_id).all()
 	return render_template('sales.html', entries=entries, Item=Item)
+
+@app.route('/API/v1.0/entries', methods=['GET'])
+@login_required
+def get_tasks():
+	Items = current_user.items
+	entries = []
+	for x in Items:
+		print(type(x.entries))
+		entries += x.entries
+	sort(entries)
+	print(entries)
+	return jsonify({'entries': entries})
+
