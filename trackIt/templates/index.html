@@ -43,69 +43,15 @@
                             <div>Amount ($)</div>
                             <div>Date (mm/dd/yy)</div>
                         </div>
+                        {% for entry in entries %}
                         <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Hamburgers and Fries</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
+                            <div class="first">Category</div>
+                            <div>{{ entry['item_id'] }}</div>
+                            <div>{{ entry['units'] }}</div>
+                            <div>{{ entry['amt'] }}</div>
+                            <div>DATE</div>
                         </div>
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>  
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>  
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>  
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>  
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>  
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>
-                        <div class="entry">
-                            <div class="first">Sale</div>
-                            <div>Item</div>
-                            <div>Units</div>
-                            <div>Amount ($)</div>
-                            <div>Date (mm/dd/yy)</div>
-                        </div>                            
+                        {%  endfor %}
                     </div>
                 </div>
 

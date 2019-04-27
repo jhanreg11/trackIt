@@ -4,6 +4,8 @@ from trackIt.models import User, Item, Entry
 from trackIt import app, db, bcrypt
 from trackIt.forms import NewSaleForm, NewPurchForm, LoginForm, RegistrationForm, NewItemForm
 from datetime import datetime, timedelta
+import requests
+
 # generates the sales/purchases/profit given a date
 def generateTotals(e, date):
 	user = User.query.filter_by(id=e).first()
@@ -57,7 +59,6 @@ def home():
 	#for x in current_user.items:
 	#	itemList += (x.id, x.name)
 	#print(itemList)
-
 	itemForm = NewItemForm(prefix='itemForm')
 	saleForm = NewSaleForm(prefix='saleForm')
 	purchForm = NewPurchForm(prefix='purchForm')
@@ -107,7 +108,7 @@ def home():
 		itemForm.name.data = None
 		itemForm.amt.data = None
 
-	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm, sales=info['sales'], purchs=info['purchs'], profit=info['profit'])
+	return render_template('index.html', saleForm=saleForm, purchForm=purchForm, itemForm=itemForm, sales=info['sales'], purchs=info['purchs'], profit=info['profit'], entries=get_entries())
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -153,13 +154,16 @@ def sales_record():
 
 @app.route('/API/v1.0/entries', methods=['GET'])
 @login_required
-def get_tasks():
+def get_entries():
 	Items = current_user.items
 	entries = []
 	for x in Items:
 		print(type(x.entries))
 		entries += x.entries
 	sort(entries)
-	print(entries)
-	return jsonify({'entries': entries})
+	dictEntries = []
+	for x in entries:
+		dictEntries += x.to_json()
+	# return jsonify({'entries': dictEntries})
+	return dictEntries
 

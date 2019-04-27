@@ -42,3 +42,7 @@ class Entry(db.Model):
 
 	def __repr__(self):
 		return "Entry: item_id({%d) id(%d)\n" % (self.item_id, self.id)
+
+	def to_json(self):
+		entry = {'id':self.id, 'item_id':self.item_id, 'units': self.units, 'amt': self.amt}
+		return entry
