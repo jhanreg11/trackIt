@@ -21,6 +21,7 @@ class User(UserMixin, db.Model):
 	def __repr__(self):
 		return "User('%r') id(%d)\n" % (self.username, self.id)
 
+
 class Item(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(20), nullable=False, default='0')
