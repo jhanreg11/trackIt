@@ -121,7 +121,7 @@ def login():
 			return redirect(next_page) if next_page else redirect(url_for('home'))
 		else:
 			flash('Login Unsuccessful', 'failure')
-	return render_template('login.html', form=form)
+	return render_template('../trackItClient/login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -138,7 +138,7 @@ def register():
 		flash('Welcome new user!', 'success')
 		return redirect(url_for('login'))
 	print(form.errors)
-	return render_template('register.html', form=form)
+	return render_template('../trackItClient/register.html', form=form)
 
 @app.route('/logout')
 def logout():
