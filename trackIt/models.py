@@ -49,7 +49,11 @@ class Item(db.Model):
     def add_item(user_id, name, price):
         item = Item(name=name, price=price, user_id=user_id)
         db.session.add(item)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except:
+            return False
+        return item
 
 
 class Entry(db.Model):

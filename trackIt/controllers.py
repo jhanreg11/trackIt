@@ -36,7 +36,7 @@ def get_entries():
 
     return jsonify({'entries': [entry.to_json() for entry in entries]})
 
-@app.route('api/entry', methods=['POST'])
+@app.route('/api/entry', methods=['POST'])
 @login_required
 def post_entry():
     data = request.get_json(force=True)
@@ -45,4 +45,21 @@ def post_entry():
         return jsonify({'success': True, 'entry': entry.to_json()})
     else:
         return jsonify({'success': False})
+
+@app.route('/api/item', methods=['GET'])
+@login_required
+def get_items():
+    return  jsonify({'items': [item.to_json() for item in current_user.items]})
+
+@app.route('/api/item', methods=['POST'])
+@login_required
+def post_item():
+    data = request.get_json(force=True)
+    item = Item.add_item(current_user.id, ['name'], data['price'])
+    if item:
+        return jsonify({'success': True, 'item': item.to_json()})
+    else:
+        return jsonify({'success': False})
+
+
 
