@@ -1,3 +1,4 @@
+
 from trackIt import db, login_manager, bcrypt
 from datetime import datetime
 from flask_login import UserMixin
@@ -15,6 +16,7 @@ class User(UserMixin, db.Model):
 
     def add_user(username, password):
         user = User(username=username, password=password)
+        print(user)
         db.session.add(user)
         try:
             db.session.commit()
@@ -34,33 +36,36 @@ class User(UserMixin, db.Model):
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False, default='0')
-    price = db.Column(db.Float(precision=2, asdecimal=True), nullable=False, default=0)
+    price = db.Column(db.Float(precision=2), nullable=False, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     entries = db.relationship('Entry', backref='item', lazy=True)
-    total = db.Column(db.Float(precision=2, asdecimal=True), nullable=False, default=0)
+    total = db.Column(db.Float(precision=2), nullable=False, default=0)
 
     def to_json(self):
         return {'id': self.id,
                 'name': self.name,
                 'total': self.total,
+                'price': self.price,
                 'user_id': self.user_id
         }
 
     def add_item(user_id, name, price):
         item = Item(name=name, price=price, user_id=user_id)
+        print(item)
         db.session.add(item)
-        try:
-            db.session.commit()
-        except:
-            return False
+        db.session.commit()
+        db.session.refresh(item)
         return item
+
+    def __repr__(self):
+        return f"item id: {self.id}, user_id: {self.user_id}, name: {self.name}, price: {self.price}"
 
 
 class Entry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
     units = db.Column(db.Integer, nullable=False, default=0)
-    amt = db.Column(db.Float(precision=2, asdecimal=True), nullable=False, default=0)
+    amt = db.Column(db.Float(precision=2), nullable=False, default=0)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def to_json(self):

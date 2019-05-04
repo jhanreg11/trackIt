@@ -55,7 +55,8 @@ def get_items():
 @login_required
 def post_item():
     data = request.get_json(force=True)
-    item = Item.add_item(current_user.id, ['name'], data['price'])
+    print(current_user.id, data['name'], data['price'])
+    item = Item.add_item(current_user.id, data['name'], data['price'])
     if item:
         return jsonify({'success': True, 'item': item.to_json()})
     else:
