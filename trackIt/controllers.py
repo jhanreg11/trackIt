@@ -26,25 +26,43 @@ def get_user():
             return jsonify(user.to_json())
     return jsonify({'error': 'There was an error signing in'})
 
+@app.route('/sign-out', methods=['POST'])
+@login_required
+def logout():
+    logout_user()
+    return jsonify({'success': True})
+
+@app.route('/api/user', methods=['GET'])
+def get_users():
+    return jsonify({'users': [user.to_json() for user in User.query.all()]})
+
 @app.route('/api/entry', methods=['GET'])
 @login_required
 def get_entries():
     entries = []
+    params = request.args.to_dict()
     items = [item for item in current_user.items]
     for item in items:
         entries += item.entries
-
+    if 'order' in params:
+        if params['order'] == 'date':
+            Entry.sort(entries)
     return jsonify({'entries': [entry.to_json() for entry in entries]})
 
 @app.route('/api/entry', methods=['POST'])
 @login_required
 def post_entry():
     data = request.get_json(force=True)
-    entry = Entry.add_entry(data['item_id'], data['units'], data['price'])
+
+    if 'price' in data:
+        price = data['units'] * data['price']
+    else:
+        price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+    entry = Entry.add_entry(data['item_id'], data['units'], price)
     if entry:
         return jsonify({'success': True, 'entry': entry.to_json()})
     else:
-        return jsonify({'success': False})
+        return jsonify({'success': False, 'current_user': current_user.username})
 
 @app.route('/api/item', methods=['GET'])
 @login_required
@@ -60,7 +78,7 @@ def post_item():
     if item:
         return jsonify({'success': True, 'item': item.to_json()})
     else:
-        return jsonify({'success': False})
+        return jsonify({'success': False, "current_user": current_user.username})
 
 
 

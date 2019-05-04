@@ -73,9 +73,11 @@ class Entry(db.Model):
                 'item_id': self.item_id,
                 'units': self.units,
                 'amt': self.amt,
-                'date': {'day': self.date.day,
-                         'month': self.date.month,
-                         'year': self.date.year}
+                'date': {
+                    'day': self.date.day,
+                    'month': self.date.month,
+                    'year': self.date.year
+                         }
                 }
 
     def add_entry(item_id, units, price):
@@ -84,4 +86,34 @@ class Entry(db.Model):
         item = Item.query.filter_by(id=item_id).first()
         item.total += price*units
         db.session.commit()
+        return entry
 
+    @staticmethod
+    def sort(list):
+        if len(list) > 1:
+            mid = len(list)//2
+            L = list[:mid]
+            R =list[mid:]
+            Entry.sort(L)
+            Entry.sort(R)
+
+            i = j = k = 0
+
+            while i < len(L) and j < len(R):
+                if L[i].date >= R[j].date:
+                    list[k] = L[i]
+                    i+=1
+                else:
+                    list[k] = R[j]
+                    j+=1
+                k+=1
+
+            while i < len(L):
+                list[k] = L[i]
+                k+=1
+                i+=1
+
+            while j < len(R):
+                list[k] = R[j]
+                k+=1
+                j+=1
