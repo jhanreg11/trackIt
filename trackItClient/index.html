@@ -6,9 +6,9 @@
     <title>trackIt</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/home.css">
-    <script type="text/javascript" src="../static/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/shared.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/index.js"></script>
     <!--add favicon-->
 </head>
 <body>
@@ -46,17 +46,17 @@
             <div class="section-title">New Sale</div>
             <div class="sale-form">
                 <div class="sale-item">
-                    <div class="label">Item</div>
+                    <div class="label">Item:&nbsp;</div>
                     <select id="sale-select">
 
                     </select>
                 </div>
                 <div class="sale-item">
-                    <div class="label">Units</div>
+                    <div class="label">Units:&nbsp;</div>
                     <input id="sale-units" required type="text">
                 </div>
                 <div class="sale-item">
-                    <div class="label">Total Amount (optional) $</div>
+                    <div class="label">Total Amount (optional) $:&nbsp;</div>
                     <input id="sale-amt">
                 </div>
             </div>
@@ -68,17 +68,17 @@
             <div class="section-title">New Purchase</div>
             <div class="purch-form">
                 <div class="purch-item">
-                    <div class="label">Item</div>
+                    <div class="label">Item:&nbsp;</div>
                     <select id="purch-select">
 
                     </select>
                 </div>
                 <div class="purch-item">
-                    <div class="label">Units</div>
+                    <div class="label">Units:&nbsp;</div>
                     <input id="purch-units" required type="text">
                 </div>
                 <div class="purch-item">
-                    <div class="label">Total Amount (optional) $</div>
+                    <div class="label">Total Amount (optional) $:&nbsp;</div>
                     <input id="purch-amt">
                 </div>
                 <div class="submit" id="sale-submit">
@@ -90,12 +90,15 @@
             <div class="section-title">New Item</div>
             <div class="item-form">
                 <div class="item-item">
-                    <div class="label">Name</div>
+                    <div class="label">Name:&nbsp;</div>
                     <input id="item-name" required type="text">
                 </div>
                 <div class="item-item">
-                    <div class="label">Price Per Unit $</div>
+                    <div class="label">Price Per Unit $:&nbsp;</div>
                     <input id="item-price" required type="text">
+                </div>
+                <div class="submit" id="sale-submit">
+                    <button id="purch-btn" type="submit">Submit</button>
                 </div>
             </div>
         </div>
