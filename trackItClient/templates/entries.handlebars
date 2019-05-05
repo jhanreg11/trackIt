@@ -1,0 +1,13 @@
+{{!-- This template goes in the activities class --}}
+<div id="activity-cat" class="entry">
+    <div class="first">Category</div>
+    <div>Item</div>
+    <div>Units</div>
+    <div>Amount ($)</div>
+    <div>Date (mm/dd/yy)</div>
+</div>
+
+{{!-- Loop through the entries rendering entry.handlebars template --}}
+{{#each entries}}
+    {{> entry entry=this}}
+{{/each}}
