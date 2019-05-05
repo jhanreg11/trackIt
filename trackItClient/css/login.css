@@ -1,35 +1,34 @@
-#login {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	margin: 10%;
-	width: 40vw;
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
 }
 
 .login-item {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
-legend {
-	font-size: 2em;
-	display: flex;
-	margin: auto;
+.label {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.form-input {
-	width: 95%;
-	border-radius: 5%;
+.submit {
+    padding-top: 1vh;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.remember {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
+.no-acc {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1vh;
 }
 
-.remember > .form-input {
-	max-width: 80%;
-}
