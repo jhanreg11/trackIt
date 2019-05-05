@@ -1,73 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>trackIt</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'>
-        <link rel="stylesheet" type="text/css" href="css/shared.css">
-        <link rel="stylesheet" type="text/css" href="css/register.css">
-        <script type="text/javascript" src="js/index.js"></script>
-	<link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    </head>
-    <body>
-        <div id="nav-bar">
-            <div class="nav-logo"><img src="img/favicon.png"/></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>trackIt</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/shared.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+</head>
+<body>
+    <div id="nav-bar">
+        <div class="nav-logo"><img src="img/favicon.png"/></div>
+    </div>
+    <div class="section" id="register">
+        <div class="section-title">Create a New Account</div>
+        <div class="register-form">
+            <div class="register-item">
+                <div class="label">Username:&nbsp;</div>
+                <input id="register-username" required type="text">
+            </div>
+            <div class="register-item">
+                <div class="label">Email:&nbsp;</div>
+                <input id="register-email">
+            </div>
+            <div class="register-item">
+                <div class="label">Password:&nbsp;</div>
+                <input id="register-password" required type="text">
+            </div>
+            <div class="register-item">
+                <div class="label">Confirm Password:&nbsp;</div>
+                <input id="register-conf" required type="text">
+            </div>
+            <div class="submit" id="register-submit">
+                <button id="register-btn">Register</button>
+            </div>
+            <div class="have-acc">
+                <div class="small-txt">Already have an account? <a href="">Login here.</a></div>
+            </div>
         </div>
-
-        <div class="section" id="register">
-            <form method="POST" action="">
-                {{ form.hidden_tag() }}
-                <fieldset class="register-group">
-                    <legend>Register</legend>
-                    <div class="register-item">
-                        {{ form.username.label(class_="form-label") }}
-                        {{ form.username(class_="form-input") }}
-                        {% if form.username.errors %}
-                            <div class='invalid'>
-                                {% for error in form.username.errors %}
-                                    <span>{{ error }}</span>
-                                    {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="register-item">
-                        {{ form.email.label(class_="form-label") }}
-                        {{ form.email(class_="form-input") }}
-                        {% if form.email.errors %}
-                            <div class='invalid'>
-                                {% for error in form.email.errors %}
-                                    <span>{{ error }}</span>
-                                    {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="register-item">
-                        {{ form.password.label(class_="form-label") }}
-                        {{ form.password(class_="form-input") }}
-                        {% if form.password.errors %}
-                            <div class='invalid'>
-                                {% for error in form.password.errors %}
-                                    <span>{{ error }}</span>
-                                    {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="register-item">
-                        {{ form.passwordConf.label(class="form-label") }}
-                        {{ form.passwordConf(class="form-input") }}
-                        {% if form.passwordConf.errors %}
-                            <div class='invalid'>
-                                {% for error in form.passwordConf.errors %}
-                                    <span>{{ error }}</span>
-                                    {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </fieldset>
-                <div>
-                    {{ form.submit(class="btn") }}
-                </div>
-            </form>
-            <div class="small-txt"><small>Already have an account? <a href="{{ url_for('login') }}">Sign in</a></small></div>
+    </div>
+</body>
+</html>
