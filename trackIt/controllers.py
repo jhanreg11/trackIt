@@ -23,8 +23,8 @@ def get_user():
     if user:
         if user.check_password(password):
             login_user(user)
-            return jsonify(user.to_json())
-    return jsonify({'error': 'There was an error signing in'})
+            return jsonify({'success': True, 'user': user.to_json()})
+    return jsonify({'success': False})
 
 @app.route('/sign-out', methods=['POST'])
 @login_required
