@@ -1,0 +1,682 @@
+[2019-05-07 02:49:07 +0000] [7646] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f87ab2582f0>
+  on_reload: <function OnReload.on_reload at 0x7f87ab258400>
+  when_ready: <function WhenReady.when_ready at 0x7f87ab258510>
+  pre_fork: <function Prefork.pre_fork at 0x7f87ab258620>
+  post_fork: <function Postfork.post_fork at 0x7f87ab258730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f87ab258840>
+  worker_int: <function WorkerInt.worker_int at 0x7f87ab258950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f87ab258a60>
+  pre_exec: <function PreExec.pre_exec at 0x7f87ab258b70>
+  pre_request: <function PreRequest.pre_request at 0x7f87ab258c80>
+  post_request: <function PostRequest.post_request at 0x7f87ab258d08>
+  child_exit: <function ChildExit.child_exit at 0x7f87ab258e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f87ab258f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f87aad680d0>
+  on_exit: <function OnExit.on_exit at 0x7f87aad681e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 02:49:07 +0000] [7646] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 02:49:07 +0000] [7646] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:49:07 +0000] [7646] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:49:07 +0000] [7646] [ERROR] Retrying in 1 second.
+[2019-05-07 02:49:08 +0000] [7646] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:49:08 +0000] [7646] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:49:08 +0000] [7646] [ERROR] Retrying in 1 second.
+[2019-05-07 02:49:09 +0000] [7646] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:49:09 +0000] [7646] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:49:09 +0000] [7646] [ERROR] Retrying in 1 second.
+[2019-05-07 02:49:10 +0000] [7646] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:49:10 +0000] [7646] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:49:10 +0000] [7646] [ERROR] Retrying in 1 second.
+[2019-05-07 02:49:11 +0000] [7646] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:49:11 +0000] [7646] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:49:11 +0000] [7646] [ERROR] Retrying in 1 second.
+[2019-05-07 02:49:12 +0000] [7646] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2019-05-07 02:50:50 +0000] [7677] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb0052b22f0>
+  on_reload: <function OnReload.on_reload at 0x7fb0052b2400>
+  when_ready: <function WhenReady.when_ready at 0x7fb0052b2510>
+  pre_fork: <function Prefork.pre_fork at 0x7fb0052b2620>
+  post_fork: <function Postfork.post_fork at 0x7fb0052b2730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb0052b2840>
+  worker_int: <function WorkerInt.worker_int at 0x7fb0052b2950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb0052b2a60>
+  pre_exec: <function PreExec.pre_exec at 0x7fb0052b2b70>
+  pre_request: <function PreRequest.pre_request at 0x7fb0052b2c80>
+  post_request: <function PostRequest.post_request at 0x7fb0052b2d08>
+  child_exit: <function ChildExit.child_exit at 0x7fb0052b2e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb0052b2f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb004dc20d0>
+  on_exit: <function OnExit.on_exit at 0x7fb004dc21e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 02:50:50 +0000] [7677] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 02:50:50 +0000] [7677] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:50:50 +0000] [7677] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:50:50 +0000] [7677] [ERROR] Retrying in 1 second.
+[2019-05-07 02:50:51 +0000] [7677] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:50:51 +0000] [7677] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:50:51 +0000] [7677] [ERROR] Retrying in 1 second.
+[2019-05-07 02:50:52 +0000] [7677] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:50:52 +0000] [7677] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:50:52 +0000] [7677] [ERROR] Retrying in 1 second.
+[2019-05-07 02:50:53 +0000] [7677] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:50:53 +0000] [7677] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:50:53 +0000] [7677] [ERROR] Retrying in 1 second.
+[2019-05-07 02:50:54 +0000] [7677] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:50:54 +0000] [7677] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:50:54 +0000] [7677] [ERROR] Retrying in 1 second.
+[2019-05-07 02:50:55 +0000] [7677] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2019-05-07 02:55:51 +0000] [7740] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fda759c72f0>
+  on_reload: <function OnReload.on_reload at 0x7fda759c7400>
+  when_ready: <function WhenReady.when_ready at 0x7fda759c7510>
+  pre_fork: <function Prefork.pre_fork at 0x7fda759c7620>
+  post_fork: <function Postfork.post_fork at 0x7fda759c7730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fda759c7840>
+  worker_int: <function WorkerInt.worker_int at 0x7fda759c7950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fda759c7a60>
+  pre_exec: <function PreExec.pre_exec at 0x7fda759c7b70>
+  pre_request: <function PreRequest.pre_request at 0x7fda759c7c80>
+  post_request: <function PostRequest.post_request at 0x7fda759c7d08>
+  child_exit: <function ChildExit.child_exit at 0x7fda759c7e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fda759c7f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fda754d70d0>
+  on_exit: <function OnExit.on_exit at 0x7fda754d71e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 02:55:51 +0000] [7740] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 02:55:51 +0000] [7740] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:55:51 +0000] [7740] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:55:51 +0000] [7740] [ERROR] Retrying in 1 second.
+[2019-05-07 02:55:52 +0000] [7740] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:55:52 +0000] [7740] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:55:52 +0000] [7740] [ERROR] Retrying in 1 second.
+[2019-05-07 02:55:53 +0000] [7740] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:55:53 +0000] [7740] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:55:53 +0000] [7740] [ERROR] Retrying in 1 second.
+[2019-05-07 02:55:54 +0000] [7740] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:55:54 +0000] [7740] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:55:54 +0000] [7740] [ERROR] Retrying in 1 second.
+[2019-05-07 02:55:55 +0000] [7740] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2019-05-07 02:55:55 +0000] [7740] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2019-05-07 02:55:55 +0000] [7740] [ERROR] Retrying in 1 second.
+[2019-05-07 02:55:56 +0000] [7740] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2019-05-07 04:17:27 +0000] [7902] [DEBUG] Current configuration:
+  config: None
+  bind: ['8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f9e64aa42f0>
+  on_reload: <function OnReload.on_reload at 0x7f9e64aa4400>
+  when_ready: <function WhenReady.when_ready at 0x7f9e64aa4510>
+  pre_fork: <function Prefork.pre_fork at 0x7f9e64aa4620>
+  post_fork: <function Postfork.post_fork at 0x7f9e64aa4730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9e64aa4840>
+  worker_int: <function WorkerInt.worker_int at 0x7f9e64aa4950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9e64aa4a60>
+  pre_exec: <function PreExec.pre_exec at 0x7f9e64aa4b70>
+  pre_request: <function PreRequest.pre_request at 0x7f9e64aa4c80>
+  post_request: <function PostRequest.post_request at 0x7f9e64aa4d08>
+  child_exit: <function ChildExit.child_exit at 0x7f9e64aa4e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9e64aa4f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f9e645b40d0>
+  on_exit: <function OnExit.on_exit at 0x7f9e645b41e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 04:17:27 +0000] [7902] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 04:17:27 +0000] [7902] [DEBUG] Arbiter booted
+[2019-05-07 04:17:27 +0000] [7902] [INFO] Listening at: http://0.0.31.144:8000 (7902)
+[2019-05-07 04:17:27 +0000] [7902] [INFO] Using worker: sync
+[2019-05-07 04:17:27 +0000] [7905] [INFO] Booting worker with pid: 7905
+[2019-05-07 04:17:27 +0000] [7902] [DEBUG] 1 workers
+[2019-05-07 04:23:23 +0000] [7902] [INFO] Handling signal: term
+[2019-05-07 04:23:23 +0000] [7905] [INFO] Worker exiting (pid: 7905)
+[2019-05-07 04:23:23 +0000] [7902] [INFO] Shutting down: Master
+[2019-05-07 04:23:40 +0000] [8019] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f9300b9e2f0>
+  on_reload: <function OnReload.on_reload at 0x7f9300b9e400>
+  when_ready: <function WhenReady.when_ready at 0x7f9300b9e510>
+  pre_fork: <function Prefork.pre_fork at 0x7f9300b9e620>
+  post_fork: <function Postfork.post_fork at 0x7f9300b9e730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9300b9e840>
+  worker_int: <function WorkerInt.worker_int at 0x7f9300b9e950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9300b9ea60>
+  pre_exec: <function PreExec.pre_exec at 0x7f9300b9eb70>
+  pre_request: <function PreRequest.pre_request at 0x7f9300b9ec80>
+  post_request: <function PostRequest.post_request at 0x7f9300b9ed08>
+  child_exit: <function ChildExit.child_exit at 0x7f9300b9ee18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9300b9ef28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f93006ae0d0>
+  on_exit: <function OnExit.on_exit at 0x7f93006ae1e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 04:23:40 +0000] [8019] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 04:23:40 +0000] [8019] [DEBUG] Arbiter booted
+[2019-05-07 04:23:40 +0000] [8019] [INFO] Listening at: http://0.0.0.0:8080 (8019)
+[2019-05-07 04:23:40 +0000] [8019] [INFO] Using worker: sync
+[2019-05-07 04:23:40 +0000] [8022] [INFO] Booting worker with pid: 8022
+[2019-05-07 04:23:40 +0000] [8019] [DEBUG] 1 workers
+[2019-05-07 04:24:52 +0000] [8022] [DEBUG] POST /
+[2019-05-07 04:25:01 +0000] [8022] [DEBUG] GET /
+[2019-05-07 05:35:00 +0000] [8019] [INFO] Handling signal: term
+[2019-05-07 05:35:00 +0000] [8022] [INFO] Worker exiting (pid: 8022)
+[2019-05-07 05:35:00 +0000] [8019] [INFO] Shutting down: Master
+[2019-05-07 05:36:32 +0000] [8506] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd0bc7212f0>
+  on_reload: <function OnReload.on_reload at 0x7fd0bc721400>
+  when_ready: <function WhenReady.when_ready at 0x7fd0bc721510>
+  pre_fork: <function Prefork.pre_fork at 0x7fd0bc721620>
+  post_fork: <function Postfork.post_fork at 0x7fd0bc721730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd0bc721840>
+  worker_int: <function WorkerInt.worker_int at 0x7fd0bc721950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd0bc721a60>
+  pre_exec: <function PreExec.pre_exec at 0x7fd0bc721b70>
+  pre_request: <function PreRequest.pre_request at 0x7fd0bc721c80>
+  post_request: <function PostRequest.post_request at 0x7fd0bc721d08>
+  child_exit: <function ChildExit.child_exit at 0x7fd0bc721e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd0bc721f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd0bc2310d0>
+  on_exit: <function OnExit.on_exit at 0x7fd0bc2311e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 05:36:32 +0000] [8506] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 05:36:32 +0000] [8506] [DEBUG] Arbiter booted
+[2019-05-07 05:36:32 +0000] [8506] [INFO] Listening at: http://0.0.0.0:8080 (8506)
+[2019-05-07 05:36:32 +0000] [8506] [INFO] Using worker: sync
+[2019-05-07 05:36:32 +0000] [8509] [INFO] Booting worker with pid: 8509
+[2019-05-07 05:36:32 +0000] [8506] [DEBUG] 1 workers
+[2019-05-07 05:36:49 +0000] [8509] [DEBUG] GET /health/check
+[2019-05-07 05:37:02 +0000] [8509] [DEBUG] GET /health/check
+[2019-05-07 05:37:35 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:37:36 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:37:37 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:37:38 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:37:39 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:38:45 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 05:45:22 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 05:45:43 +0000] [8509] [DEBUG] POST //sign-up
+[2019-05-07 05:45:44 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 05:57:10 +0000] [8509] [DEBUG] GET //health/check
+[2019-05-07 05:57:16 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 05:57:53 +0000] [8509] [DEBUG] GET //entry
+[2019-05-07 05:57:56 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 05:59:46 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 06:00:05 +0000] [8509] [DEBUG] POST //sign-in
+[2019-05-07 06:00:12 +0000] [8509] [DEBUG] POST //sign-up
+[2019-05-07 06:00:12 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 06:03:20 +0000] [8509] [DEBUG] GET //api/entry
+[2019-05-07 06:04:52 +0000] [8506] [INFO] Handling signal: term
+[2019-05-07 06:04:52 +0000] [8509] [INFO] Worker exiting (pid: 8509)
+[2019-05-07 06:04:52 +0000] [8506] [INFO] Shutting down: Master
+[2019-05-07 06:05:12 +0000] [9177] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f99607462f0>
+  on_reload: <function OnReload.on_reload at 0x7f9960746400>
+  when_ready: <function WhenReady.when_ready at 0x7f9960746510>
+  pre_fork: <function Prefork.pre_fork at 0x7f9960746620>
+  post_fork: <function Postfork.post_fork at 0x7f9960746730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9960746840>
+  worker_int: <function WorkerInt.worker_int at 0x7f9960746950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9960746a60>
+  pre_exec: <function PreExec.pre_exec at 0x7f9960746b70>
+  pre_request: <function PreRequest.pre_request at 0x7f9960746c80>
+  post_request: <function PostRequest.post_request at 0x7f9960746d08>
+  child_exit: <function ChildExit.child_exit at 0x7f9960746e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9960746f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f99602560d0>
+  on_exit: <function OnExit.on_exit at 0x7f99602561e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-07 06:05:12 +0000] [9177] [INFO] Starting gunicorn 19.9.0
+[2019-05-07 06:05:12 +0000] [9177] [DEBUG] Arbiter booted
+[2019-05-07 06:05:12 +0000] [9177] [INFO] Listening at: http://0.0.0.0:8080 (9177)
+[2019-05-07 06:05:12 +0000] [9177] [INFO] Using worker: sync
+[2019-05-07 06:05:12 +0000] [9180] [INFO] Booting worker with pid: 9180
+[2019-05-07 06:05:12 +0000] [9177] [DEBUG] 1 workers
+[2019-05-07 06:06:14 +0000] [9180] [DEBUG] POST //api/sign-in
+[2019-05-07 06:06:14 +0000] [9180] [DEBUG] GET //api/entry

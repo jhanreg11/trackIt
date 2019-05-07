@@ -3,7 +3,7 @@ from flask import request, jsonify
 from trackIt.models import *
 from flask_login import login_user, current_user, logout_user, login_required
 
-@app.route('/sign-up', methods=['POST'])
+@app.route('/api/sign-up', methods=['POST'])
 def post_user():
     data = request.get_json(force=True)
     hashed_pw = bcrypt.generate_password_hash(data['password']).decode('utf-8')
@@ -14,7 +14,7 @@ def post_user():
     else:
         return jsonify({'success': False})
 
-@app.route('/sign-in', methods=['POST'])
+@app.route('/api/sign-in', methods=['POST'])
 def get_user():
     data = request.get_json(force=True)
     username = data['username']
@@ -26,7 +26,7 @@ def get_user():
             return jsonify({'success': True, 'user': user.to_json()})
     return jsonify({'success': False})
 
-@app.route('/sign-out', methods=['POST'])
+@app.route('/api/sign-out', methods=['POST'])
 @login_required
 def logout():
     logout_user()

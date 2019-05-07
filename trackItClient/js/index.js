@@ -37,7 +37,7 @@ $(document).ready(function() {
       return
     }
     if (price) {
-      Request.POST({'item_id': item, 'units': units}, '/api/entry', function (result) {
+      Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
         if (result.success) {
           alert('New sale created!')
         } else {
@@ -45,7 +45,7 @@ $(document).ready(function() {
         }
       })
     } else {
-      Request.POST({'item_id': item, 'units': units, 'price': amt}, '/api/emtry', function (result) {
+      Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
         if (result.success) {
           alert('New sale created!')
         } else {

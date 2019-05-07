@@ -8,7 +8,7 @@ $(document).ready(function () {
         if (username) {
             if (password) {
                 acc = {'username': username, 'password': password}
-                request.POST(acc, 'sign-in', function(result) {
+                request.POST(acc, 'api/sign-in', function(result) {
                     if (result.success == true) {
                         window.location.replace('index.html')
                     }

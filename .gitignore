@@ -1,2 +1,4 @@
 venv/
 .idea/
+start_server
+check_server
