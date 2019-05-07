@@ -110,17 +110,20 @@ $(document).ready(function() {
 
   Request.GET('api/entry', function(response) {
     if (response) {
+      console.log(response.entries)
       entriesHTML = Handlebars.templates['entries']({
-        'entries': response.entries,
+        'entries': response.entries
       })
       $('#activities').html(entriesHTML)
     }
   })
 
-  //Request.GET('api/item', function (response) {
-    //if (response) {
-      //itemsHTML = Handlebars.templates
-   // }
-  //})
+  Request.GET('api/item', function (response) {
+    if (response) {
+      itemsHTML = Handlebars.templates['items']({
+        'items': response.items
+      })
+    }
+  })
   //END HANDLEBARS
 })

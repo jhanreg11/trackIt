@@ -69,10 +69,16 @@ class Entry(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def to_json(self):
+        if self.amt > 0:
+            cat = 'Sale'
+        else:
+            cat = 'Purchase'
         return {'id': self.id,
+                'category': cat,
                 'item_id': self.item_id,
                 'units': self.units,
                 'amt': self.amt,
+
                 'date': {
                     'day': self.date.day,
                     'month': self.date.month,
