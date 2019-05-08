@@ -7,7 +7,7 @@ $(document).ready(function() {
   //LOG OUT
   $('#log-out').click(function () {
     Request.GET('api/sign-out', function (response) {
-        window.location.replace('register.html')
+        window.location.replace('login.html')
     })
 
   })
@@ -19,7 +19,7 @@ $(document).ready(function() {
     units = $('#sale-units').val()
     amt = $('#sale-amt').val()
 
-    if (!items && !units) {
+    if (!item && !units) {
       alert('Please fill out at least the item and units field for the sale form.')
       return
     }
@@ -53,7 +53,7 @@ $(document).ready(function() {
     units = $('#purch-units').val()
     amt = $('#purch-amt').val()
 
-    if (!items && !units) {
+    if (!item && !units) {
       alert('Please fill out at least the item and units field for the sale form.')
       return
     }
@@ -63,17 +63,18 @@ $(document).ready(function() {
       return
     }
     if (price) {
+      console.log('price is present')
       Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
-        if (result.success) {
+        if (result.success == true) {
           alert('New purchase created!')
-          updateEntries()
+          //updateEntries()
         } else {
           alert('Oops! Something went wrong please try again')
         }
       })
     } else {
       Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
-        if (result.success) {
+        if (result.success == true) {
           alert('New purchase created!')
           updateEntries()
         } else {
