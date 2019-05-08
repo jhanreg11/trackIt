@@ -1,6 +1,6 @@
 Request = function() {
     var that = Object.create(Request.prototype);
-    var BASE_URL = 'http://0.0.0.0:8000/'
+    var BASE_URL = 'https://jacob-hanson.com/trackIt/api/'
 
     that.POST = function(req, path, completion) {
         $.ajax(BASE_URL + path, {
