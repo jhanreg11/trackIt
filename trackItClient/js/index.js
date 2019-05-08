@@ -1,19 +1,13 @@
 var Request = new Request()
 Handlebars.partials = Handlebars.templates
-function changeSum(e) {
-  console.log("I made it")
-  title = $(e).html() + '▾'
-  $(e).html($('#dropbtn').html().substring(0, $('#dropbtn').html().length-1))
-  $('#dropbtn').html(title)
-}
+
 
 $(document).ready(function() {
 
   //LOG OUT
   $('#log-out').click(function () {
     Request.GET('api/sign-out', function (response) {
-      if (response.success)
-        window.location.replace('index.html')
+        window.location.replace('register.html')
     })
 
   })
@@ -112,6 +106,14 @@ $(document).ready(function() {
 
   //TOTALS SECTION
 
+  //Changes e.html to dropbtn.html and vice versa
+  function changeSum(e) {
+    console.log("I made it")
+    title = $(e).html() + '▾'
+    $(e).html($('#dropbtn').html().substring(0, $('#dropbtn').html().length-1))
+    $('#dropbtn').html(title)
+  }
+
   $('#dropbtn').click(function() {
     if ($('.dropdown-content').hasClass('active')) {
       $('.dropdown-content').removeClass('active')
@@ -123,16 +125,22 @@ $(document).ready(function() {
   $('.dropdown-choice').each(function () {
     $(this).click(function() {
       p = $(this).html()
-      if (p == 'This Week')
+      if (p == 'This Week') {
         updateTotals(7)
-      else if (p == 'This Quarter')
+        changeSum(this)
+      }
+      else if (p == 'This Quarter') {
         updateTotals(90)
+        changeSum(this)
+      }
       else if (p == 'This Month') {
         updateTotals(30)
-
+        changeSum(this)
       }
-      else
+      else {
         updateTotals(365)
+        changeSum(this)
+      }
     })
   })
 
@@ -166,6 +174,7 @@ $(document).ready(function() {
   updateTotals = function(per) {
     Request.GET('api/totals', function(response) {
       if (response) {
+          console.log(response.totals)
         totalsHTML = Handlebars.templates['totals']({
           'totals': response.totals
         })

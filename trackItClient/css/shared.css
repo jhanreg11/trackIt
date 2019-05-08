@@ -9,6 +9,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+    flex-wrap: wrap;
 	align-items: center;
 }
 
@@ -149,4 +150,7 @@ fieldset > div {
 	border-style: none;
 }
 
+#log-out {
+    cursor: pointer;
+}
 /*///END NAV BAR///*/
