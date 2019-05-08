@@ -680,3 +680,110 @@
 [2019-05-07 06:05:12 +0000] [9177] [DEBUG] 1 workers
 [2019-05-07 06:06:14 +0000] [9180] [DEBUG] POST //api/sign-in
 [2019-05-07 06:06:14 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 16:29:03 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 16:36:14 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 16:36:23 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 19:46:09 +0000] [9180] [DEBUG] POST //api/sign-in
+[2019-05-07 19:46:09 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 20:18:37 +0000] [9180] [DEBUG] POST //api/sign-in
+[2019-05-07 20:18:37 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 23:43:12 +0000] [9180] [DEBUG] GET //api/entry
+[2019-05-07 23:47:04 +0000] [9180] [DEBUG] POST //sign-up
+[2019-05-07 23:47:08 +0000] [9180] [DEBUG] POST //sign-up
+[2019-05-07 23:47:13 +0000] [9180] [DEBUG] POST //sign-up
+[2019-05-08 15:22:59 +0000] [9177] [INFO] Handling signal: term
+[2019-05-08 15:22:59 +0000] [9180] [INFO] Worker exiting (pid: 9180)
+[2019-05-08 15:22:59 +0000] [9177] [INFO] Shutting down: Master
+[2019-05-08 15:23:09 +0000] [12486] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f34e67e52f0>
+  on_reload: <function OnReload.on_reload at 0x7f34e67e5400>
+  when_ready: <function WhenReady.when_ready at 0x7f34e67e5510>
+  pre_fork: <function Prefork.pre_fork at 0x7f34e67e5620>
+  post_fork: <function Postfork.post_fork at 0x7f34e67e5730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f34e67e5840>
+  worker_int: <function WorkerInt.worker_int at 0x7f34e67e5950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f34e67e5a60>
+  pre_exec: <function PreExec.pre_exec at 0x7f34e67e5b70>
+  pre_request: <function PreRequest.pre_request at 0x7f34e67e5c80>
+  post_request: <function PostRequest.post_request at 0x7f34e67e5d08>
+  child_exit: <function ChildExit.child_exit at 0x7f34e67e5e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f34e67e5f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f34e62f50d0>
+  on_exit: <function OnExit.on_exit at 0x7f34e62f51e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 15:23:09 +0000] [12486] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 15:23:09 +0000] [12486] [DEBUG] Arbiter booted
+[2019-05-08 15:23:09 +0000] [12486] [INFO] Listening at: http://0.0.0.0:8080 (12486)
+[2019-05-08 15:23:09 +0000] [12486] [INFO] Using worker: sync
+[2019-05-08 15:23:09 +0000] [12489] [INFO] Booting worker with pid: 12489
+[2019-05-08 15:23:09 +0000] [12486] [DEBUG] 1 workers
+[2019-05-08 15:26:53 +0000] [12489] [DEBUG] POST //api/sign-in
+[2019-05-08 15:27:00 +0000] [12489] [DEBUG] POST //api/sign-in
+[2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/entry
+[2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/item
+[2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/totals
