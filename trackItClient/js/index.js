@@ -185,6 +185,6 @@ $(document).ready(function() {
 
   updateEntries()
   updateItems()
-  updateTotals(7)
+  updateTotals(30)
   //END HANDLEBARS
 })

@@ -96,6 +96,7 @@ def get_totals():
         per = params['per']
     for x in current_user.items:
         for y in x.entries:
+            print(y.date, ' >= ', datetime.utcnow()-timedelta(days=int(per)), ' ? ')
             if y.date >= datetime.utcnow() - timedelta(days=int(per)):
                 profits += y.amt
                 if y.amt > 0:
