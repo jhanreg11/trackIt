@@ -172,7 +172,7 @@ $(document).ready(function() {
     })
   }
   updateTotals = function(per) {
-    Request.GET('api/totals', function(response) {
+    Request.GET('api/totals?per='+per, function(response) {
       if (response) {
           console.log(response.totals)
         totalsHTML = Handlebars.templates['totals']({
