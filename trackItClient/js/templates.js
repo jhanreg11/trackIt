@@ -16,12 +16,12 @@ templates['entry'] = template({"compiler":[7,">= 4.0.0"],"main":function(contain
   return "<div class=\"entry\">\n    <div class=\"first\">"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.category : stack1), depth0))
     + "</div>\n    <div>"
-    + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.item : stack1)) != null ? stack1.name : stack1), depth0))
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.item_name : stack1), depth0))
     + "</div>\n    <div>"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.units : stack1), depth0))
     + "</div>\n    <div>"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.amount : stack1), depth0))
-    + " ($)</div>\n    <div>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.amt : stack1), depth0))
+    + " $</div>\n    <div>"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.date : stack1)) != null ? stack1.month : stack1), depth0))
     + "/"
     + alias2(alias1(((stack1 = ((stack1 = (depth0 != null ? depth0.entry : depth0)) != null ? stack1.date : stack1)) != null ? stack1.day : stack1), depth0))

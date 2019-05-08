@@ -76,6 +76,7 @@ class Entry(db.Model):
         return {'id': self.id,
                 'category': cat,
                 'item_id': self.item_id,
+                'item_name': self.item.name,
                 'units': self.units,
                 'amt': self.amt,
 
