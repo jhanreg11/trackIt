@@ -9,19 +9,16 @@ function changeSum(e) {
 
 $(document).ready(function() {
 
+  //LOG OUT
+  $('#log-out').click(function () {
+    Request.GET('api/sign-out', function (response) {
+      if (response.success)
+        window.location.replace('index.html')
+    })
+
+  })
+
   //FORM SUBMISSION
-  $('#dropbtn').click(function() {
-    if ($('.dropdown-content').hasClass('active')) {
-      $('.dropdown-content').removeClass('active')
-    } else {
-      $('.dropdown-content').addClass('active')
-    }
-  })
-
-  $('.dropdown-choice').each(function () {
-    $(this).click(changeSum(this))
-  })
-
   $('#sale-btn').click(function () {
     console.log("sale btn clicked")
     item = $('#sale-item').val()
@@ -112,6 +109,34 @@ $(document).ready(function() {
   })
 
   //END FORM SUBMISSION
+
+  //TOTALS SECTION
+
+  $('#dropbtn').click(function() {
+    if ($('.dropdown-content').hasClass('active')) {
+      $('.dropdown-content').removeClass('active')
+    } else {
+      $('.dropdown-content').addClass('active')
+    }
+  })
+
+  $('.dropdown-choice').each(function () {
+    $(this).click(function() {
+      p = $(this).html()
+      if (p == 'This Week')
+        updateTotals(7)
+      else if (p == 'This Quarter')
+        updateTotals(90)
+      else if (p == 'This Month') {
+        updateTotals(30)
+
+      }
+      else
+        updateTotals(365)
+    })
+  })
+
+  //END TOTALS SECTION
 
   //HANDLEBARS LOAD IN
 

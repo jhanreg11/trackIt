@@ -27,7 +27,7 @@ def get_user():
             return jsonify({'success': True, 'user': user.to_json()})
     return jsonify({'success': False})
 
-@app.route('/api/sign-out', methods=['POST'])
+@app.route('/api/sign-out', methods=['GET'])
 @login_required
 def logout():
     logout_user()
