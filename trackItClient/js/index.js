@@ -23,6 +23,7 @@ $(document).ready(function() {
   })
 
   $('#sale-btn').click(function () {
+    console.log("sale btn clicked")
     item = $('#sale-item').val()
     units = $('#sale-units').val()
     amt = $('#sale-amt').val()
@@ -56,6 +57,7 @@ $(document).ready(function() {
   })
 
   $('#purch-btn').click(function () {
+    console.log('purch btn clicked')
     item = $('#purch-item').val()
     units = $('#purch-units').val()
     amt = $('#purch-amt').val()
@@ -73,6 +75,7 @@ $(document).ready(function() {
       Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
         if (result.success) {
           alert('New purchase created!')
+          updateEntries()
         } else {
           alert('Oops! Something went wrong please try again')
         }
@@ -81,6 +84,7 @@ $(document).ready(function() {
       Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
         if (result.success) {
           alert('New purchase created!')
+          updateEntries()
         } else {
           alert('Oops! Something went wrong please try again')
         }
@@ -89,6 +93,7 @@ $(document).ready(function() {
   })
 
   $('#item-btn').click(function() {
+    console.log("Item btn clicked")
     itemName = $('#item-name').val()
     price = $('#item-price').val()
 
@@ -97,8 +102,10 @@ $(document).ready(function() {
       return
     }
     Request.POST({'name': itemName, 'price': price}, 'api/item', function(result) {
-      if (result.success)
+      if (result.success) {
         alert("New item created!")
+        updateItems()
+      }
       else
         alert("Oops! Something went wrong please try again")
     })
@@ -108,22 +115,42 @@ $(document).ready(function() {
 
   //HANDLEBARS LOAD IN
 
-  Request.GET('api/entry', function(response) {
-    if (response) {
-      console.log(response.entries)
-      entriesHTML = Handlebars.templates['entries']({
-        'entries': response.entries
-      })
-      $('#activities').html(entriesHTML)
-    }
-  })
+  updateEntries = function() {
+    Request.GET('api/entry', function(response) {
+      if (response) {
+        console.log(response.entries)
+        entriesHTML = Handlebars.templates['entries']({
+          'entries': response.entries
+        })
+        $('#activities').html(entriesHTML)
+      }
+    })
+  }
 
-  Request.GET('api/item', function (response) {
-    if (response) {
-      itemsHTML = Handlebars.templates['items']({
-        'items': response.items
-      })
-    }
-  })
+  updateItems = function() {
+    Request.GET('api/item', function (response) {
+      if (response) {
+        itemsHTML = Handlebars.templates['items']({
+          'items': response.items
+        })
+        $('#purch-select').html(itemsHTML)
+        $('#sale-select').html(itemsHTML)
+      }
+    })
+  }
+  updateTotals = function(per) {
+    Request.GET('api/totals', function(response) {
+      if (response) {
+        totalsHTML = Handlebars.templates['totals']({
+          'totals': response.totals
+        })
+        $('#totals').html(totalsHTML)
+      }
+    })
+  }
+
+  updateEntries()
+  updateItems()
+  updateTotals(7)
   //END HANDLEBARS
 })

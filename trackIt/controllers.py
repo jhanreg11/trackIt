@@ -2,6 +2,7 @@ from trackIt import app, db
 from flask import request, jsonify
 from trackIt.models import *
 from flask_login import login_user, current_user, logout_user, login_required
+from datetime import datetime, timedelta
 
 @app.route('/api/sign-up', methods=['POST'])
 def post_user():
@@ -47,6 +48,9 @@ def get_entries():
     if 'order' in params:
         if params['order'] == 'date':
             Entry.sort(entries)
+    #if 'per' in params:
+     #   print('I made it')
+        # filter out all entries not within the per
     return jsonify({'entries': [entry.to_json() for entry in entries]})
 
 @app.route('/api/entry', methods=['POST'])
@@ -79,6 +83,27 @@ def post_item():
         return jsonify({'success': True, 'item': item.to_json()})
     else:
         return jsonify({'success': False, "current_user": current_user.username})
+
+@app.route('/api/totals', methods=['GET'])
+@login_required
+def get_totals():
+    params = request.args.to_dict()
+    profits = 0
+    sales = 0
+    purchs = 0
+    per = 0
+    if 'per' in params:
+        per = params['per']
+    for x in current_user.items:
+        for y in x.entries:
+            if y.date >= datetime.utcnow() - timedelta(days=int(per)):
+                profits += y.amt
+                if y.amt > 0:
+                    sales += y.amt
+                else:
+                    purchs += y.amt
+
+    return jsonify({'totals': {'profits': profits, 'sales': sales, 'purchs': -purchs}})
 
 
 

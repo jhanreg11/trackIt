@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="nav-bar">
-    <div class="nav-logo"><img src="../static/img/favicon.png"/></div>
+    <div class="nav-logo"><img src="img/favicon.png"/></div>
     <div class="nav-items">
         <div class="nav-item">LOG OUT</div>
     </div>
@@ -47,7 +47,7 @@
     <div class="right half">
         <div id="new-sale" class="section">
             <div class="section-title">New Sale</div>
-            <div class="sale-form">
+            <form method="post" class="sale-form">
                 <div class="sale-item">
                     <div class="label">Item:&nbsp;</div>
                     <select id="sale-select">
@@ -62,14 +62,14 @@
                     <div class="label">Total Amount (optional) $:&nbsp;</div>
                     <input id="sale-amt">
                 </div>
-            </div>
-            <div class="submit" id="sale-submit">
-                <button id="sale-btn" type="submit">Submit</button>
-            </div>
+                <div class="submit" id="sale-submit">
+                    <button id="sale-btn" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
         <div id="new-purchase" class="section">
             <div class="section-title">New Purchase</div>
-            <div class="purch-form">
+            <form method="post" class="purch-form">
                 <div class="purch-item">
                     <div class="label">Item:&nbsp;</div>
                     <select id="purch-select">
@@ -87,11 +87,11 @@
                 <div class="submit" id="sale-submit">
                     <button id="purch-btn" type="submit">Submit</button>
                 </div>
-            </div>
+            </form>
         </div>
-        <div id="new-item" class="section">
+        <form id="new-item" class="section">
             <div class="section-title">New Item</div>
-            <div class="item-form">
+            <form method="post" class="item-form">
                 <div class="item-item">
                     <div class="label">Name:&nbsp;</div>
                     <input id="item-name" required type="text">
@@ -103,7 +103,7 @@
                 <div class="submit" id="sale-submit">
                     <button id="item-btn" type="submit">Submit</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

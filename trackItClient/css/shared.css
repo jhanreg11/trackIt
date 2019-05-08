@@ -132,7 +132,7 @@ fieldset > div {
 	align-items: center;
 }
 
-.nav-item > a {
+.nav-item {
 	border-left-style: solid;
 	border-left-color: white;
 	display: flex;
@@ -144,11 +144,8 @@ fieldset > div {
 	text-decoration: none;
 }
 
-.nav-item > a:hover {
-	color: gray;
-}
 
-.first > a {
+.first {
 	border-style: none;
 }
 
