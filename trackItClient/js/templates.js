@@ -51,12 +51,12 @@ templates['items'] = template({"1":function(container,depth0,helpers,partials,da
 templates['totals'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<div class=\"total\">\n    <div class=\"total-title\">Sales</div>\n    <div>$"
+  return "<div class=\"total-title\">Sales</div>\n<div>$"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.totals : depth0)) != null ? stack1.sales : stack1), depth0))
-    + "</div>\n    <div class=\"total-title\">Purchases</div>\n    <div>$"
+    + "</div>\n<div class=\"total-title\">Purchases</div>\n<div>$"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.totals : depth0)) != null ? stack1.purchs : stack1), depth0))
-    + "</div>\n    <div class=\"total-title\">Net Profits</div>\n    <div>$"
+    + "</div>\n<div class=\"total-title\">Net Profits</div>\n<div>$"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.totals : depth0)) != null ? stack1.profits : stack1), depth0))
-    + "</div>\n</div>";
+    + "</div>\n";
 },"useData":true});
 })();

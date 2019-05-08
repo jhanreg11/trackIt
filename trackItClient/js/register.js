@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
         else {
             user = {'username': username, 'password': password}
-            request.POST(user, 'sign-up', function(result) {
+            request.POST(user, 'api/sign-up', function(result) {
                 if (result.success == true) {
                     window.location.replace('index.html')
                 }
