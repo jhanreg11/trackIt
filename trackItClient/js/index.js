@@ -28,7 +28,7 @@ $(document).ready(function() {
       alert('You entered a negative number. Did you mean to fill out the purchase form?')
       return
     }
-    if (price) {
+    if (amt) {
       Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
         if (result.success) {
           alert('New sale created!')
@@ -62,9 +62,9 @@ $(document).ready(function() {
       alert('You entered a negative number. Did you mean to fill out the sale form?')
       return
     }
-    if (price) {
+    if (amt) {
       console.log('price is present')
-      Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
+      Request.POST({'item_id': 1, 'units': units}, 'api/entry', function (result) {
         if (result.success == true) {
           alert('New purchase created!')
           //updateEntries()
@@ -73,10 +73,11 @@ $(document).ready(function() {
         }
       })
     } else {
+      console.log("About to Post")
       Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
         if (result.success == true) {
           alert('New purchase created!')
-          updateEntries()
+          //updateEntries()
         } else {
           alert('Oops! Something went wrong please try again')
         }
