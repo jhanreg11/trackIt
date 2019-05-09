@@ -9,6 +9,9 @@ Request = function() {
             contentType: 'application/json',
             success: function(res) {
                 completion(res)
+            },
+            error: function() {
+                console.log("POST Failed")
             }
         })
     };
