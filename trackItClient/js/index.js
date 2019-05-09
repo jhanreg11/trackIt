@@ -82,6 +82,7 @@ $(document).ready(function() {
           alert('Oops! Something went wrong please try again')
         }
       })
+      console.log("after post")
     }
   })
 
