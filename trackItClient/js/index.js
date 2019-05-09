@@ -75,7 +75,7 @@ $(document).ready(function() {
     } else {
       console.log("About to Post")
       Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
-        if (result.success == true) {
+        if (result.success) {
           alert('New purchase created!')
           //updateEntries()
         } else {
