@@ -62,8 +62,8 @@ $(document).ready(function() {
       alert('You entered a negative number. Did you mean to fill out the sale form?')
       return
     }
-    if (amt) {
-      console.log('price is present')
+    if (!amt) {
+      console.log('price is not present')
       Request.POST({'item_id': 1, 'units': units}, 'api/entry', function (result) {
         if (result.success == true) {
           alert('New purchase created!')
