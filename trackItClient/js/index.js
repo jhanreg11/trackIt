@@ -15,7 +15,7 @@ $(document).ready(function() {
   //FORM SUBMISSION
   $('#sale-btn').click(function () {
     console.log("sale btn clicked")
-    item = $('#sale-item').val()
+    item = $('#sale-select').val()
     units = $('#sale-units').val()
     amt = $('#sale-amt').val()
 
@@ -49,7 +49,8 @@ $(document).ready(function() {
 
   $('#purch-btn').click(function () {
     console.log('purch btn clicked')
-    item = $('#purch-item').val()
+    item = $('#purch-select').val()
+    console.log(item)
     units = $('#purch-units').val()
     amt = $('#purch-amt').val()
 
@@ -62,9 +63,9 @@ $(document).ready(function() {
       alert('You entered a negative number. Did you mean to fill out the sale form?')
       return
     }
-    if (!amt) {
+    if (amt) {
       console.log('price is not present')
-      Request.POST({'item_id': 1, 'units': units}, 'api/entry', function (result) {
+      Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
         if (result.success == true) {
           alert('New purchase created!')
           //updateEntries()
@@ -74,7 +75,7 @@ $(document).ready(function() {
       })
     } else {
       console.log("About to Post")
-      Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
+      Request.POST({'item_id': 1, 'units': units}, 'api/entry', function (result) {
         if (result.success) {
           alert('New purchase created!')
           //updateEntries()

@@ -787,3 +787,870 @@
 [2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/entry
 [2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/item
 [2019-05-08 15:27:01 +0000] [12489] [DEBUG] GET //api/totals
+[2019-05-08 20:33:16 +0000] [13785] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2883c5e2f0>
+  on_reload: <function OnReload.on_reload at 0x7f2883c5e400>
+  when_ready: <function WhenReady.when_ready at 0x7f2883c5e510>
+  pre_fork: <function Prefork.pre_fork at 0x7f2883c5e620>
+  post_fork: <function Postfork.post_fork at 0x7f2883c5e730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2883c5e840>
+  worker_int: <function WorkerInt.worker_int at 0x7f2883c5e950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2883c5ea60>
+  pre_exec: <function PreExec.pre_exec at 0x7f2883c5eb70>
+  pre_request: <function PreRequest.pre_request at 0x7f2883c5ec80>
+  post_request: <function PostRequest.post_request at 0x7f2883c5ed08>
+  child_exit: <function ChildExit.child_exit at 0x7f2883c5ee18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2883c5ef28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f288376d0d0>
+  on_exit: <function OnExit.on_exit at 0x7f288376d1e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-08 20:33:16 +0000] [13785] [INFO] Starting gunicorn 19.9.0
+[2019-05-08 20:33:16 +0000] [13785] [DEBUG] Arbiter booted
+[2019-05-08 20:33:16 +0000] [13785] [INFO] Listening at: http://0.0.0.0:8080 (13785)
+[2019-05-08 20:33:16 +0000] [13785] [INFO] Using worker: sync
+[2019-05-08 20:33:16 +0000] [13788] [INFO] Booting worker with pid: 13788
+[2019-05-08 20:33:16 +0000] [13785] [DEBUG] 1 workers
+[2019-05-08 20:34:46 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:34:46 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:34:46 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:27 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:29 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:29 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:30 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:30 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:34 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:37 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:35:37 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:35:37 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:41 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:35:52 +0000] [13788] [DEBUG] POST //api/item
+[2019-05-08 20:35:52 +0000] [13788] [DEBUG] Ignoring EPIPE
+[2019-05-08 20:35:52 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:35:52 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:35:52 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:36:00 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:36:00 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:36:00 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:36:05 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:36:05 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:36:05 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:36:13 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:36:13 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:36:13 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:36:19 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:36:19 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:36:19 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:37:28 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:37:28 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-08 20:37:28 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:37:34 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-08 20:37:34 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-08 20:37:34 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-09 00:06:26 +0000] [13788] [DEBUG] POST //api/sign-in
+[2019-05-09 00:06:27 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-09 00:06:27 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-09 00:06:27 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-09 00:06:47 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-09 00:06:47 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-09 00:06:47 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-09 00:06:58 +0000] [13788] [DEBUG] GET //api/entry
+[2019-05-09 00:06:58 +0000] [13788] [DEBUG] GET //api/totals
+[2019-05-09 00:06:58 +0000] [13788] [DEBUG] GET //api/item
+[2019-05-09 00:21:56 +0000] [13785] [INFO] Handling signal: term
+[2019-05-09 00:21:56 +0000] [13788] [INFO] Worker exiting (pid: 13788)
+[2019-05-09 00:21:56 +0000] [13785] [INFO] Shutting down: Master
+[2019-05-09 00:22:12 +0000] [14381] [DEBUG] Current configuration:
+  config: None
+  bind: [':8080']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /srv/trackIt
+  daemon: True
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /srv/trackIt/trackIt.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: trackIt:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f93068052f0>
+  on_reload: <function OnReload.on_reload at 0x7f9306805400>
+  when_ready: <function WhenReady.when_ready at 0x7f9306805510>
+  pre_fork: <function Prefork.pre_fork at 0x7f9306805620>
+  post_fork: <function Postfork.post_fork at 0x7f9306805730>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f9306805840>
+  worker_int: <function WorkerInt.worker_int at 0x7f9306805950>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f9306805a60>
+  pre_exec: <function PreExec.pre_exec at 0x7f9306805b70>
+  pre_request: <function PreRequest.pre_request at 0x7f9306805c80>
+  post_request: <function PostRequest.post_request at 0x7f9306805d08>
+  child_exit: <function ChildExit.child_exit at 0x7f9306805e18>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f9306805f28>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f93063150d0>
+  on_exit: <function OnExit.on_exit at 0x7f93063151e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-05-09 00:22:12 +0000] [14381] [INFO] Starting gunicorn 19.9.0
+[2019-05-09 00:22:12 +0000] [14381] [DEBUG] Arbiter booted
+[2019-05-09 00:22:12 +0000] [14381] [INFO] Listening at: http://0.0.0.0:8080 (14381)
+[2019-05-09 00:22:12 +0000] [14381] [INFO] Using worker: sync
+[2019-05-09 00:22:12 +0000] [14384] [INFO] Booting worker with pid: 14384
+[2019-05-09 00:22:12 +0000] [14381] [DEBUG] 1 workers
+[2019-05-09 00:22:27 +0000] [14384] [DEBUG] POST //api/sign-in
+[2019-05-09 00:22:27 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:22:27 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:22:27 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:22:39 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:22:39 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:22:39 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:23:20 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:23:20 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:23:20 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:23:26 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:23:26 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:23:26 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:35:56 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:35:56 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:35:56 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:29 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:37:29 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:37:29 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:36 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:37:36 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:36 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:37:41 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:42 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:43 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:37:43 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:38:49 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:38:49 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:38:49 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:40:22 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:40:22 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:40:22 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:40:42 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:40:42 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:40:42 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:42:00 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 00:42:00 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:42:00 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:42:02 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 00:42:02 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 00:42:02 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:19:22 +0000] [14384] [DEBUG] POST //api/sign-in
+[2019-05-09 17:19:32 +0000] [14384] [DEBUG] POST //api/sign-in
+[2019-05-09 17:19:32 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:19:32 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:19:32 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:14 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:15 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:15 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:15 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:26 +0000] [14384] [DEBUG] POST //api/item
+[2019-05-09 17:20:27 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:20:27 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:20:27 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:20:27 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:40 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:20:40 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:20:40 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:20:53 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:20:53 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:20:53 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:21:09 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:21:09 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:21:09 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:21:45 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:21:45 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:21:45 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:23:33 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:23:33 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:23:33 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:28:56 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:28:56 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:28:56 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:03 +0000] [14384] [DEBUG] Closing connection. 
+[2019-05-09 17:29:03 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:03 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:29:03 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:29:07 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:29:07,340] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:29:07 +0000] [14384] [DEBUG] Ignoring EPIPE
+[2019-05-09 17:29:07 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:07 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:29:07 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:29:08 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:08 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:29:08 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:29:14 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:29:14,321] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:29:14 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:14 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:29:14 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:29:19 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:29:19 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:29:19 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:33:44 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:33:44 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:33:44 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:33:51 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:33:51,884] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:33:52 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:33:52 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:33:52 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:33:57 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:33:57,271] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:33:57 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:33:57 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:33:57 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:34:55 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:34:55 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:34:55 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:35:00 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:35:00,297] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:35:00 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:35:00 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:35:00 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:36:11 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:36:11 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:36:11 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:54:16 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:54:16 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:54:16 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:54:22 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:54:22,207] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:54:22 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:54:22 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:54:22 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:54:41 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:54:41,733] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:54:41 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:54:41 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:54:41 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:56:44 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:56:44 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:56:44 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:56:50 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:56:50,515] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:56:50 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:56:50 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:56:50 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:57:15 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:57:15,055] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:57:15 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:57:15 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:57:15 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 17:57:20 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 17:57:20,213] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 17:57:20 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 17:57:20 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 17:57:20 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:00:20 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:00:20 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:00:20 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:01:51 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:01:51 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:01:51 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:01:56 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:01:56,550] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:01:56 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:01:56 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:01:56 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:02:01 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:02:01 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:02:01 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:02:33 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:02:33 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:02:33 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:02:43 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:02:43,465] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 18:02:43 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:02:43 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:02:43 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:04:45 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:04:45 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:04:45 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:04:48 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:04:48,680] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:04:48 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:04:48 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:04:48 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:07:20 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:07:20 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:07:20 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:07:27 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:07:27,071] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:07:27 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:07:27 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:07:27 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:07:43 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:07:43,380] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:07:43 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:07:43 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:07:43 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:08:08 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:08:08,084] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:08:08 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:08:08 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:08:08 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:09:32 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:09:32 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:09:32 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:09:34 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:09:34,089] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:09:34 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:09:34 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:09:34 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:09:51 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:09:51,055] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:09:51 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:09:51 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:09:51 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:10:15 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:10:15,658] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:11:20 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:11:21 +0000] [14384] [DEBUG] GET //api/totals
+[2019-05-09 18:11:21 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:11:30 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:11:30,416] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 64, in post_entry
+    price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+TypeError: can't multiply sequence by non-int of type 'float'
+[2019-05-09 18:12:12 +0000] [14384] [DEBUG] POST //api/entry
+[2019-05-09 18:12:12,379] ERROR in app: Exception on /api/entry [POST]
+Traceback (most recent call last):
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/trackIt/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/trackIt/trackIt/controllers.py", line 62, in post_entry
+    price = data['units'] * data['price']
+TypeError: can't multiply sequence by non-int of type 'str'
+[2019-05-09 18:12:12 +0000] [14384] [DEBUG] GET //api/entry
+[2019-05-09 18:12:12 +0000] [14384] [DEBUG] GET //api/item
+[2019-05-09 18:12:12 +0000] [14384] [DEBUG] GET //api/totals
