@@ -1,6 +1,9 @@
 Request = function() {
     var that = Object.create(Request.prototype);
-    var BASE_URL = 'https://jacob-hanson.com/trackIt/api/' 
+    //Production base url
+    //var BASE_URL = 'https://jacob-hanson.com/trackIt/api/'
+    //Local dev base url
+    var BASE_URL = 'localhost:8080/api/'
 
     that.POST = function(req, path, completion) {
         $.ajax(BASE_URL + path, {

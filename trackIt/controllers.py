@@ -75,6 +75,7 @@ def post_entry():
 def get_items():
     return  jsonify({'items': [item.to_json() for item in current_user.items]})
 
+
 @app.route('/api/item', methods=['POST'])
 @login_required
 def post_item():
@@ -108,5 +109,7 @@ def get_totals():
 
     return jsonify({'totals': {'profits': profits, 'sales': sales, 'purchs': -purchs}})
 
-
+@app.route('/health/check', methods=["GET"])
+def check():
+    return "I'm alive"
 
