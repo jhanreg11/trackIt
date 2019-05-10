@@ -57,7 +57,7 @@ def get_entries():
 @login_required
 def post_entry():
     data = request.get_json(force=True)
-
+    print(data)
     if 'price' in data:
         price = data['price']
     else:
