@@ -3,3 +3,4 @@ venv/
 start_server
 check_server
 trackIt/__pycache__/
+trackIt.log
