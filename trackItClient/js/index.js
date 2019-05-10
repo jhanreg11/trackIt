@@ -36,6 +36,7 @@ $(document).ready(function() {
     }
     console.log(data)
     Request.POST(data, 'api/entry', function (response) {
+      console.log("Post completed")
       if (response == true) {
         alert('New entry created!')
         updateEntries()
