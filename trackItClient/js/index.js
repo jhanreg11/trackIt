@@ -13,78 +13,43 @@ $(document).ready(function() {
   })
 
   //FORM SUBMISSION
-  $('#sale-btn').click(function () {
-    console.log("sale btn clicked")
-    item = $('#sale-select').val()
-    units = $('#sale-units').val()
-    amt = $('#sale-amt').val()
-
-    if (!item && !units) {
-      alert('Please fill out at least the item and units field for the sale form.')
+  entryBtnClick = function (type) {
+    console.log(type+' btn clicked.')
+    item_id = $('#'+type+'-select').val()
+    units = $('#'+type+'-units').val()
+    price = $('#'+type+'-amt').val()
+    if (!item_id || !units) {
+      alert ('Please fill out the item and units')
       return
     }
+    if (price) {
+      if (price < 0 && type == 'sale') {
+        alert("Incorrect amount for entry type")
+        return
+      }
+      if (price > 0 && type=='sale')
+        price = -price
+      data = {'item_id': item_id, 'units': int(units), 'price': double(price)}
+    }
+    else {
+      data = {'item_id': item_id, 'units': units}
+    }
+    console.log(data)
+    Request.POST(data, 'api/entry', function (response) {
+      if (response == true) {
+        alert('New entry created!')
+        updateEntries()
+        updateTotals()
+      }
+    })
+  }
 
-    if (amt < 0 || units < 0) {
-      alert('You entered a negative number. Did you mean to fill out the purchase form?')
-      return
-    }
-    if (amt) {
-      Request.POST({'item_id': item, 'units': units}, 'api/entry', function (result) {
-        if (result.success) {
-          alert('New sale created!')
-        } else {
-          alert('Oops! Something went wrong please try again')
-        }
-      })
-    } else {
-      Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
-        if (result.success) {
-          alert('New sale created!')
-        } else {
-          alert('Oops! Something went wrong please try again')
-        }
-      })
-    }
+  $('#sale-btn').click(function() {
+    entryBtnClick('sale')
   })
 
   $('#purch-btn').click(function () {
-    console.log('purch btn clicked')
-    item = $('#purch-select').val()
-    console.log(item)
-    units = $('#purch-units').val()
-    amt = $('#purch-amt').val()
-
-    if (!item && !units) {
-      alert('Please fill out at least the item and units field for the sale form.')
-      return
-    }
-
-    if (amt < 0 || units < 0) {
-      alert('You entered a negative number. Did you mean to fill out the sale form?')
-      return
-    }
-    if (amt) {
-      console.log('price is not present')
-      Request.POST({'item_id': item, 'units': units, 'price': amt}, 'api/entry', function (result) {
-        if (result.success == true) {
-          alert('New purchase created!')
-          //updateEntries()
-        } else {
-          alert('Oops! Something went wrong please try again')
-        }
-      })
-    } else {
-      console.log("About to Post")
-      Request.POST({'item_id': 1, 'units': units}, 'api/entry', function (result) {
-        if (result.success) {
-          alert('New purchase created!')
-          //updateEntries()
-        } else {
-          alert('Oops! Something went wrong please try again')
-        }
-      })
-      console.log("after post")
-    }
+    entryBtnClick('purch')
   })
 
   $('#item-btn').click(function() {
@@ -188,7 +153,7 @@ $(document).ready(function() {
   }
 
   updateEntries()
-  updateItems()
+  //updateItems()
   updateTotals(30)
   //END HANDLEBARS
 })

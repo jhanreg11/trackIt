@@ -88,10 +88,10 @@ class Entry(db.Model):
                 }
 
     def add_entry(item_id, units, price):
-        entry = Entry(item_id = item_id, units=units, amt=price*units)
+        entry = Entry(item_id = item_id, units=units, amt=price)
         db.session.add(entry)
         item = Item.query.filter_by(id=item_id).first()
-        item.total += price*units
+        item.total += price
         db.session.commit()
         return entry
 

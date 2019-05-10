@@ -59,7 +59,7 @@ def post_entry():
     data = request.get_json(force=True)
 
     if 'price' in data:
-        price = data['units'] * data['price']
+        price = data['price']
     else:
         price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
     entry = Entry.add_entry(data['item_id'], data['units'], price)
