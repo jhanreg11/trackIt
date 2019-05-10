@@ -22,22 +22,34 @@ $(document).ready(function() {
       alert ('Please fill out the item and units')
       return
     }
+    if (isNaN(item_id) || isNaN(units)) {
+      alert("Please enter only numbers")
+      return
+    }
     if (price) {
+      if (isNaN(price)) {
+        alert("Please enter only number")
+        return
+      }
       if (price < 0 && type == 'sale') {
         alert("Incorrect amount for entry type")
         return
       }
       if (price > 0 && type=='sale')
         price = -price
-      data = {'item_id': item_id, 'units': int(units), 'price': double(price)}
+      data = {'item_id': item_id, 'units': parseInt(units), 'price': parseFloat(price), 'type': type}
     }
     else {
-      data = {'item_id': parseInt(item_id), 'units': parseInt(units)}
+      data = {'item_id': parseInt(item_id), 'units': parseInt(units), 'type': type}
     }
     console.log(data)
     Request.POST(data, 'api/entry', function (response) {
       console.log("Post completed")
-      if (response == true) {
+      if (response.status == 401) {
+        window.location.replace('login.html')
+        return
+      }
+      if (response.success == true) {
         alert('New entry created!')
         updateEntries()
         updateTotals()
@@ -62,7 +74,15 @@ $(document).ready(function() {
       alert("Please fill out all fields to create a new item.")
       return
     }
-    Request.POST({'name': itemName, 'price': price}, 'api/item', function(result) {
+    if (isNaN(price)) {
+      alert("Please enter a number for price")
+      return
+    }
+    Request.POST({'name': itemName, 'price': parseFloat(price)}, 'api/item', function(result) {
+      if (result.status == 401) {
+        window.location.replace('login.html')
+        return
+      }
       if (result.success) {
         alert("New item created!")
         updateItems()
@@ -121,6 +141,10 @@ $(document).ready(function() {
   updateEntries = function() {
     Request.GET('api/entry', function(response) {
       if (response) {
+        if (response.status == 401) {
+          window.location.replace('login.html')
+          return
+        }
         console.log(response.entries)
         entriesHTML = Handlebars.templates['entries']({
           'entries': response.entries
@@ -133,6 +157,10 @@ $(document).ready(function() {
   updateItems = function() {
     Request.GET('api/item', function (response) {
       if (response) {
+        if (response.status == 401) {
+          window.location.replace('login.html')
+          return
+        }
         itemsHTML = Handlebars.templates['items']({
           'items': response.items
         })
@@ -154,7 +182,7 @@ $(document).ready(function() {
   }
 
   updateEntries()
-  //updateItems()
+  updateItems()
   updateTotals(30)
   //END HANDLEBARS
 })

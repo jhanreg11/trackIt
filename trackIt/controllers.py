@@ -62,6 +62,8 @@ def post_entry():
         price = data['price']
     else:
         price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+        if data['type'] == 'purch':
+            price = -price
     entry = Entry.add_entry(data['item_id'], data['units'], price)
     if entry:
         return jsonify({'success': True, 'entry': entry.to_json()})
