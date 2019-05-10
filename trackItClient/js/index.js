@@ -32,7 +32,7 @@ $(document).ready(function() {
       data = {'item_id': item_id, 'units': int(units), 'price': double(price)}
     }
     else {
-      data = {'item_id': item_id, 'units': int(units)}
+      data = {'item_id': item_id, 'units': parseInt(units)}
     }
     console.log(data)
     Request.POST(data, 'api/entry', function (response) {
