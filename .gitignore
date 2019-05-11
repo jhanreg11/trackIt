@@ -6,3 +6,4 @@ trackIt/__pycache__/
 trackIt.log
 __pycache__/
 trackIt/*.pyc
+trackIt/site.db
