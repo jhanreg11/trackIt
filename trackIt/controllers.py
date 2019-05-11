@@ -107,7 +107,7 @@ def get_totals():
                 else:
                     purchs += y.amt
 
-    return jsonify({'totals': {'profits': profits, 'sales': sales, 'purchs': -purchs}})
+    return jsonify({'totals': {'profits': round(profits, 2), 'sales': round(sales, 2), 'purchs': -(round(purchs, 2))}})
 
 @app.route('/health/check', methods=["GET"])
 def check():
