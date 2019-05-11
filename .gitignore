@@ -2,6 +2,7 @@ venv/
 .idea/
 start_server
 check_server
+__pycache__/
 trackIt/__pycache__/
 trackIt.log
 __pycache__/

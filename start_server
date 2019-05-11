@@ -1,1 +1,0 @@
-/srv/trackIt/venv/bin/gunicorn trackIt:app -b :8080 -D --log-file /srv/trackIt/trackIt.log --log-level debug
