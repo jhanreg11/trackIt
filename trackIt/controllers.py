@@ -59,9 +59,9 @@ def post_entry():
     data = request.get_json(force=True)
     print(data)
     if 'price' in data:
-        price = data['price']
+        price = round(data['price'], 2)
     else:
-        price = data['units'] * Item.query.filter_by(id=data['item_id']).first().price
+        price = round((data['units'] * Item.query.filter_by(id=data['item_id']).first().price), 2)
         if data['type'] == 'purch':
             price = -price
     entry = Entry.add_entry(data['item_id'], data['units'], price)
@@ -81,7 +81,7 @@ def get_items():
 def post_item():
     data = request.get_json(force=True)
     print(current_user.id, data['name'], data['price'])
-    item = Item.add_item(current_user.id, data['name'], data['price'])
+    item = Item.add_item(current_user.id, data['name'], round(data['price'], 2))
     if item:
         return jsonify({'success': True, 'item': item.to_json()})
     else:
