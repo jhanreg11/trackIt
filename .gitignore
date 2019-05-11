@@ -4,3 +4,5 @@ start_server
 check_server
 trackIt/__pycache__/
 trackIt.log
+__pycache__/
+trackIt/*.pyc

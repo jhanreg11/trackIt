@@ -1,32 +1,8 @@
 /*///RECENT ACTIVITY///*/
-#activities {
-	display: flex;
-	flex-direction: column;
-}
 
-#activity-cat > div {
-	font-weight: bold;
-}
-
-.entry {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
-	align-items: stretch;
-	border-style: none none solid none;
-	border-color: #eae9e1;
-}
-
-.entry > div {
-	border-style: none none none solid;
-	border-color: #eae9e1;
-	width: 20%;
-	padding: 3px;
-}
-
-.entry > .first {
-	border-style: none;
+#activites-iframe {
+	height: 40vh;
+    border: none;
 }
 
 /*///END RECENT ACTIVITY///*/
