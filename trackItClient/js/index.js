@@ -135,6 +135,10 @@ $(document).ready(function() {
       alert("Please fill out all fields to create a new item.")
       return
     }
+    if (itemName.length > 12) {
+      alert('That name is too long. There is a 12 character limit')
+      return
+    }
     if (isNaN(price)) {
       alert("Please enter a number for price")
       return

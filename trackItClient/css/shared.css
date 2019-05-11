@@ -1,5 +1,3 @@
-/*///COMMON///*/
-
 body {
 	background-clip: border-box;
 	font-family: 'Roboto Slab', serif;
@@ -9,30 +7,16 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 	align-items: center;
 }
 
 #body {
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: flex-start;
-}
-
-.half {
-	display: flex;
-	flex-direction: column;
-}
-
-.left {
-	width: 45vw;
-	padding-left: 3vw;
-}
-
-.right {
-	width: 30vw;
-	padding-right: 3vw;
 }
 
 .section {
@@ -50,63 +34,17 @@ body {
 	font-size: 1.75em;
 }
 
-.dropdown {
-	cursor: pointer;
+@media ( max-width : 600px) {
+	.left {
+		width: 100%;
+	}
 }
 
-.small-txt {
-	color: gray;
+@media ( max-width: 360px ) {
+	.right {
+		width: 100px;
+	}
 }
-
-.small-txt > small > a {
-	color: gray;
-}
-
-.small-txt > small > a:hover {
-	color: #474a4f;
-}
-
-.alert {
-	border-style: solid;
-	padding: 20px;
-	border-radius: 5%;
-}
-
-.alert-success {
-	background: #e7eae0;
-	border-color: #657a35;
-}
-
-.alert-failure {
-	background: #ffa5a5;
-	border-color: red;
-}
-
-form > fieldset {
-	border-style: none;
-}
-
-fieldset > div {
-	padding: 1%;
-}
-
-
-.dollar-field > .dollar-input {
-	width: 20%;
-}
-
-.dollar-field > .cents-input {
-	width: 15%;
-}
-
-.invalid {
-	color: red;
-	font-size: .8em;
-}
-
-
-/*///END COMMON///*/
-
 /*///NAV  BAR///*/
 #nav-bar {
 	width: 100vw;
