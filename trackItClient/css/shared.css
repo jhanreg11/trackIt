@@ -34,17 +34,8 @@ body {
 	font-size: 1.75em;
 }
 
-@media ( max-width : 600px) {
-	.left {
-		min-width: 0;
-		width: 100vw;
-	}
-}
 
 @media ( max-width: 360px ) {
-	.right {
-		width: 80vw;
-	}
 
 	.section {
 		width: 80vw;

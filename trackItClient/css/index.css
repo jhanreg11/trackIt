@@ -11,10 +11,23 @@
 	padding-left: 3vw;
 }
 
+@media ( max-width : 600px) {
+	.left {
+		min-width: 0;
+		width: 100vw;
+	}
+}
+
 .right {
 	min-width: 300px;
 	width: 30vw;
 	padding-right: 3vw;
+}
+
+@media (max-width: 360px) {
+	.right {
+		width: 80vw;
+	}
 }
 
 .dropdown {
