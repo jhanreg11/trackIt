@@ -36,7 +36,8 @@ body {
 
 @media ( max-width : 600px) {
 	.left {
-		width: 100%;
+		min-width: 0;
+		width: 100vw;
 	}
 }
 
