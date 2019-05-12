@@ -44,6 +44,14 @@ body {
 	.right {
 		width: 100px;
 	}
+
+	.body {
+		font-size: .8em;
+	}
+
+	.section-title {
+		font-size: 1.55em;
+	}
 }
 /*///NAV  BAR///*/
 #nav-bar {
