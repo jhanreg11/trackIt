@@ -42,7 +42,11 @@ body {
 
 @media ( max-width: 360px ) {
 	.right {
-		width: 100px;
+		width: 80%;
+	}
+
+	.section {
+		width: 80%;
 	}
 
 	.body {
