@@ -32,3 +32,9 @@
     padding-bottom: 1vh;
 }
 
+@media ( max-width: 600px) {
+    .login-form {
+        width: 80vw;
+    }
+}
+
