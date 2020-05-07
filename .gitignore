@@ -6,3 +6,4 @@ trackIt.log
 __pycache__/
 trackIt/*.pyc
 trackIt/site.db
+.DS_Store

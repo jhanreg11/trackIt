@@ -58,7 +58,7 @@ class Item(db.Model):
         return item
 
     def __repr__(self):
-        return f"item id: {self.id}, user_id: {self.user_id}, name: {self.name}, price: {self.price}"
+        return "item id: {}, user_id: {}, name: {}, price: {}".format(self.id, self.user_id, self.name, self.price)
 
 
 class Entry(db.Model):
